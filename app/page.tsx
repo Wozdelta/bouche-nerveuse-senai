@@ -1,8 +1,12 @@
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { ShoppingBag, Utensils, Target, Eye, Heart, Leaf, Users, Award } from 'lucide-react';
-import ProductCarousel from '../components/ProductCarousel';
-import WhyChooseUs from '../components/WhyChooseUs';
-import FranchiseCtaSection from '../components/FranchiseCtaSection';
+
+// Code Splitting: Lazy loading componentes pesados para poupar TTI e CPU inicial
+const ProductCarousel = dynamic(() => import('../components/ProductCarousel'));
+const WhyChooseUs = dynamic(() => import('../components/WhyChooseUs'));
+const FranchiseCtaSection = dynamic(() => import('../components/FranchiseCtaSection'));
+
 
 export default function Page() {
   return (
@@ -159,7 +163,7 @@ export default function Page() {
                 <div className="relative w-48 h-48 sm:w-56 sm:h-56 shrink-0">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#b5122e] to-wine rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
                   <div className="w-full h-full rounded-full overflow-hidden border-[6px] border-[#2a1411] relative z-10 group-hover:scale-105 transition-transform duration-700 shadow-2xl">
-                    <Image fill sizes="(max-width: 768px) 10vw, 15vw" loading="lazy" src="/images/Funcionarios/Cariani.png" alt="Renato Cariani" className="object-cover" />
+                    <Image fill sizes="(max-width: 768px) 10vw, 15vw" loading="lazy" src="/images/Funcionarios/Cariani.webp" alt="Renato Cariani" className="object-cover" />
                   </div>
                   {/* Floating Badge */}
                   <div className="absolute -bottom-4 right-4 w-16 h-16 bg-[#b5122e] rounded-full flex items-center justify-center border-4 border-[#1b0f0d] shadow-xl z-20 group-hover:rotate-12 transition-transform duration-500">
@@ -184,7 +188,7 @@ export default function Page() {
                 <div className="relative w-48 h-48 sm:w-56 sm:h-56 shrink-0">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#b5122e] to-wine rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
                   <div className="w-full h-full rounded-full overflow-hidden border-[6px] border-[#2a1411] relative z-10 group-hover:scale-105 transition-transform duration-700 shadow-2xl">
-                    <Image fill sizes="(max-width: 768px) 10vw, 15vw" loading="lazy" src="/images/Funcionarios/Julio.png" alt="Júlio Balestrin" className="object-cover" />
+                    <Image fill sizes="(max-width: 768px) 10vw, 15vw" loading="lazy" src="/images/Funcionarios/Julio.webp" alt="Júlio Balestrin" className="object-cover" />
                   </div>
                   {/* Floating Badge */}
                   <div className="absolute -bottom-4 right-4 w-16 h-16 bg-[#b5122e] rounded-full flex items-center justify-center border-4 border-[#1b0f0d] shadow-xl z-20 group-hover:rotate-12 transition-transform duration-500">
@@ -275,7 +279,7 @@ export default function Page() {
             <div className="w-full lg:w-1/2 relative mt-10 lg:mt-0">
               <div className="absolute inset-0 bg-gradient-to-tr from-wine/20 to-transparent rounded-[3rem] transform translate-x-4 lg:translate-x-8 translate-y-4 lg:translate-y-8"></div>
               <div className="relative w-full h-[600px] lg:h-[750px] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white bg-white group">
-                <Image fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" src="/images/Treinamento/treinamento.jpg" alt="Treinamento Bouche Nerveuse" className="object-cover hover:scale-105 transition-transform duration-700" />
+                <Image fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" src="/images/Treinamento/treinamento.webp" alt="Treinamento Bouche Nerveuse" className="object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
 

@@ -43,7 +43,7 @@ export default function CadastroPage() {
           className="absolute inset-0"
         >
           <Image 
-            src="/Sao paulo.png" 
+            src="/Sao paulo.webp" 
             alt="Bouche Nerveuse Patisserie - São Paulo" 
             fill 
             className="object-cover object-center opacity-80"

@@ -11,11 +11,11 @@ export default function CreditosPage() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const team = [
-    { name: "Jonathan Rios", role: "Diretor Comercial", initials: "JR", badge: "Research", image: "/Jonathan.png" },
-    { name: "Gustavo Santana", role: "Diretor do Clima Organizacional", initials: "GS", badge: "TPM", image: "/gustavo.png" },
-    { name: "João Abiel", role: "Diretor de Marketing", initials: "JA", badge: "Data", image: "/Abiel.png", isLuto: true },
-    { name: "Kaiky Leão", role: "Diretor de Inclusão Diversidade", initials: "KL", badge: "Data", image: "/kaiky.png" },
-    { name: "José Milton", role: "Diretor de Tecnologia", initials: "JM", badge: "Eng", image: "/Jose.png" },
+    { name: "Jonathan Rios", role: "Diretor Comercial", initials: "JR", badge: "Research", image: "/Jonathan.webp" },
+    { name: "Gustavo Santana", role: "Diretor do Clima Organizacional", initials: "GS", badge: "TPM", image: "/gustavo.webp" },
+    { name: "João Abiel", role: "Diretor de Marketing", initials: "JA", badge: "Data", image: "/Abiel.webp", isLuto: true },
+    { name: "Kaiky Leão", role: "Diretor de Inclusão Diversidade", initials: "KL", badge: "Data", image: "/kaiky.webp" },
+    { name: "José Milton", role: "Diretor de Tecnologia", initials: "JM", badge: "Eng", image: "/Jose.webp" },
   ];
 
   return (
@@ -157,7 +157,7 @@ export default function CreditosPage() {
               <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-white p-3 shadow-inner">
                 <div className="relative rounded-xl overflow-hidden bg-white shadow-lg">
                   <img 
-                    src="/Segredo.jpeg" 
+                    src="/Segredo.webp" 
                     alt="kaiky nas horas vagas" 
                     className="w-full h-auto object-contain"
                     referrerPolicy="no-referrer"
@@ -224,7 +224,7 @@ export default function CreditosPage() {
                   <div className="absolute inset-0 border border-white/10 rounded-[1.5rem] z-10 pointer-events-none mix-blend-overlay"></div>
                   
                   <img 
-                    src="/images/AbielLuto/Modern Aesthetic Wedding Photo Collage Instagram Post.png" 
+                    src="/images/AbielLuto/Modern Aesthetic Wedding Photo Collage Instagram Post.webp" 
                     alt="Homenagem Abiel" 
                     className="w-full h-auto max-h-[60vh] object-contain opacity-90 sepia-[0.1] contrast-[1.05]"
                   />
@@ -241,15 +241,18 @@ export default function CreditosPage() {
                 </p>
               </div>
 
-              <audio 
-                ref={audioRef}
-                src="/images/AbielLuto/- Vai na paz irmao fica com Deus 😢 - Cr divulga (youtube).mp3"
-                loop
-              />
+
             </div>
           </div>
         </div>
       )}
+
+      {/* Áudio global do Luto pre-carregado no DOM */}
+      <audio 
+        ref={audioRef}
+        src="/images/AbielLuto/- Vai na paz irmao fica com Deus 😢 - Cr divulga (youtube).mp3"
+        loop
+      />
     </div>
   );
 }

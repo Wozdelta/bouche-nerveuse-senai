@@ -426,7 +426,7 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
                          </div>
                          <div className="sm:col-span-2">
                            <label className="block text-[13px] font-bold text-gray-600 mb-1.5 uppercase tracking-wide">Anexar Certificado (Opcional)</label>
-                           <input type="file" accept=".pdf,.png,.jpg" className="w-full bg-gray-50 border border-dashed border-gray-300 rounded-xl px-4 py-4 text-[13px] focus:outline-none file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 cursor-pointer" />
+                           <input type="file" accept=".pdf,.png,.jpg,.jpeg,.webp" className="w-full bg-gray-50 border border-dashed border-gray-300 rounded-xl px-4 py-4 text-[13px] focus:outline-none file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 cursor-pointer" />
                          </div>
                        </div>
                      )}

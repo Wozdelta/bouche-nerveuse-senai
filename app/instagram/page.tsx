@@ -135,7 +135,7 @@ export default function InstagramProfile() {
                     <div className="flex items-center gap-2"><Heart fill="white" size={24} /> 12.4k</div>
                     <div className="flex items-center gap-2"><MessageCircle fill="white" size={24} /> 340</div>
                 </div>
-                <Image src="/Equipe.jpeg" alt="Nossa Equipe" fill className="object-cover z-0" />
+                <Image src="/Equipe.webp" alt="Nossa Equipe" fill className="object-cover z-0" />
             </div>
 
             {/* Post 2 (SP City) */}
@@ -144,7 +144,7 @@ export default function InstagramProfile() {
                     <div className="flex items-center gap-2"><Heart fill="white" size={24} /> 8.9k</div>
                     <div className="flex items-center gap-2"><MessageCircle fill="white" size={24} /> 120</div>
                 </div>
-                <Image src="/Sao paulo.png" alt="Loja São Paulo" fill className="object-cover z-0" />
+                <Image src="/Sao paulo.webp" alt="Loja São Paulo" fill className="object-cover z-0" />
             </div>
 
             {/* Post 3 (Vagas - Manter igual) */}
@@ -168,7 +168,7 @@ export default function InstagramProfile() {
                     <div className="flex items-center gap-2"><Heart fill="white" size={24} /> 14.1k</div>
                     <div className="flex items-center gap-2"><MessageCircle fill="white" size={24} /> 412</div>
                 </div>
-                <Image src="/Vieses Inconscientes na Contratação.png" alt="Vieses Inconscientes da Contratação" fill className="object-cover z-0" />
+                <Image src="/Vieses Inconscientes na Contratação.webp" alt="Vieses Inconscientes da Contratação" fill className="object-cover z-0" />
             </div>
 
             {/* Post 6 (Membro) */}
@@ -177,7 +177,7 @@ export default function InstagramProfile() {
                     <div className="flex items-center gap-2"><Heart fill="white" size={24} /> 9.3k</div>
                     <div className="flex items-center gap-2"><MessageCircle fill="white" size={24} /> 104</div>
                 </div>
-                <Image src="/Xique Xeque.png" alt="Xique Xeque" fill className="object-cover z-0" />
+                <Image src="/Xique Xeque.webp" alt="Xique Xeque" fill className="object-cover z-0" />
             </div>
 
             {/* Post 7 (Membro) */}
@@ -186,7 +186,7 @@ export default function InstagramProfile() {
                     <div className="flex items-center gap-2"><Heart fill="white" size={24} /> 11.2k</div>
                     <div className="flex items-center gap-2"><MessageCircle fill="white" size={24} /> 210</div>
                 </div>
-                <Image src="/Abiel.png" alt="Membro da Equipe" fill className="object-cover z-0" />
+                <Image src="/Abiel.webp" alt="Membro da Equipe" fill className="object-cover z-0" />
             </div>
 
             {/* Post 8 (Membro) */}
@@ -195,7 +195,7 @@ export default function InstagramProfile() {
                     <div className="flex items-center gap-2"><Heart fill="white" size={24} /> 28.4k</div>
                     <div className="flex items-center gap-2"><MessageCircle fill="white" size={24} /> 3.4k</div>
                 </div>
-                <Image src="/kaiky.png" alt="Membro da Equipe" fill className="object-cover z-0" />
+                <Image src="/kaiky.webp" alt="Membro da Equipe" fill className="object-cover z-0" />
             </div>
 
             {/* Post 9 (Segredo) */}
@@ -204,7 +204,7 @@ export default function InstagramProfile() {
                     <div className="flex items-center gap-2"><Heart fill="white" size={24} /> 6.8k</div>
                     <div className="flex items-center gap-2"><MessageCircle fill="white" size={24} /> 42</div>
                 </div>
-                <Image src="/Segredo.jpeg" alt="Segredo" fill className="object-cover z-0" />
+                <Image src="/Segredo.webp" alt="Segredo" fill className="object-cover z-0" />
             </div>
           </div>
         </div>

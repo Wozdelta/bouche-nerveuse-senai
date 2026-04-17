@@ -58,7 +58,7 @@ export default function FranchiseCtaSection() {
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 pt-6 border-t border-white/10">
                 <div className="flex items-center gap-5">
                   <div className="w-16 h-16 rounded-xl overflow-hidden shadow-2xl shrink-0 cursor-pointer hover:scale-105 transition-transform duration-300" onClick={() => setIsTeamModalOpen(true)}>
-                    <Image src="/Equipe.jpeg" alt="Equipe" width={64} height={64} className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-500"  />
+                    <Image src="/Equipe.webp" alt="Equipe" width={64} height={64} className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-500"  />
                   </div>
                   <div className="text-left">
                     <span className="text-white/50 text-xs font-bold uppercase tracking-widest block mb-1">Atendimento Rápido</span>
@@ -150,52 +150,52 @@ export default function FranchiseCtaSection() {
                     <use href="#wave" x="460" y="380" />
                   </svg>
                   <div className="map-cities">
-                    <div style={{ "--x": 5, "--y": 67 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'Rio de Janeiro', image: '/Rio de janeiro.png', description: 'Nossa unidade no Rio de Janeiro está localizada em um dos principais centros comerciais da cidade, oferecendo nossa linha completa de bolos e tortas industriais para toda a região metropolitana.' }); setIsCityModalOpen(true); }}>
+                    <div style={{ "--x": 5, "--y": 67 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'Rio de Janeiro', image: '/Rio de janeiro.webp', description: 'Nossa unidade no Rio de Janeiro está localizada em um dos principais centros comerciais da cidade, oferecendo nossa linha completa de bolos e tortas industriais para toda a região metropolitana.' }); setIsCityModalOpen(true); }}>
                       <div className="map-city__label">
                         <span data-icon="🏖️" className="map-city__sign">Rio de Janeiro</span>
-                        <Image src="/Rio%20de%20janeiro.png" alt="Rio de Janeiro" width={120} height={80} className="map-city__image" />
+                        <Image src="/Rio%20de%20janeiro.webp" alt="Rio de Janeiro" width={120} height={80} className="map-city__image" />
                       </div>
                     </div>
-                    <div style={{ "--x": 32, "--y": 32 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'São Paulo', image: '/Sao paulo.png', description: 'A unidade de São Paulo é a nossa matriz brasileira, com capacidade de produção industrial de alta escala, atendendo toda a demanda da região sudeste.' }); setIsCityModalOpen(true); }}>
+                    <div style={{ "--x": 32, "--y": 32 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'São Paulo', image: '/Sao paulo.webp', description: 'A unidade de São Paulo é a nossa matriz brasileira, com capacidade de produção industrial de alta escala, atendendo toda a demanda da região sudeste.' }); setIsCityModalOpen(true); }}>
                       <div className="map-city__label">
                         <span data-icon="🏢" className="map-city__sign anim anim-grow">São Paulo</span>
-                        <Image src="/Sao%20paulo.png" alt="São Paulo" width={120} height={80} className="map-city__image" />
+                        <Image src="/Sao%20paulo.webp" alt="São Paulo" width={120} height={80} className="map-city__image" />
                       </div>
                     </div>
-                    <div style={{ "--x": 58, "--y": 83 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'Salvador', image: '/Salvador.png', description: 'Localizada na capital baiana, nossa unidade de Salvador leva o sabor único dos nossos produtos para todo o Nordeste brasileiro.' }); setIsCityModalOpen(true); }}>
+                    <div style={{ "--x": 58, "--y": 83 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'Salvador', image: '/Salvador.webp', description: 'Localizada na capital baiana, nossa unidade de Salvador leva o sabor único dos nossos produtos para todo o Nordeste brasileiro.' }); setIsCityModalOpen(true); }}>
                       <div className="map-city__label">
                         <span data-icon="🌞" className="map-city__sign anim anim-slidein">Salvador</span>
-                        <Image src="/Salvador.png" alt="Salvador" width={120} height={80} className="map-city__image" />
+                        <Image src="/Salvador.webp" alt="Salvador" width={120} height={80} className="map-city__image" />
                       </div>
                     </div>
-                    <div style={{ "--x": 65, "--y": 22 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'Brasília', image: '/Brasília.png', description: 'A unidade de Brasília atende o Distrito Federal e região centro-oeste com produtos de alta qualidade e logística eficiente.' }); setIsCityModalOpen(true); }}>
+                    <div style={{ "--x": 65, "--y": 22 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'Brasília', image: '/Brasília.webp', description: 'A unidade de Brasília atende o Distrito Federal e região centro-oeste com produtos de alta qualidade e logística eficiente.' }); setIsCityModalOpen(true); }}>
                       <div className="map-city__label">
                         <span data-icon="🏛️" className="map-city__sign">Brasília</span>
-                        <Image src="/Bras%C3%ADlia.png" alt="Brasília" width={120} height={80} className="map-city__image" />
+                        <Image src="/Bras%C3%ADlia.webp" alt="Brasília" width={120} height={80} className="map-city__image" />
                       </div>
                     </div>
-                    <div style={{ "--x": 87, "--y": 58 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'Curitiba', image: '/Curitiba.png', description: 'Nossa unidade em Curitiba representa a expansão no sul do país, trazendo nossa tradição francesa para a capital paranaense.' }); setIsCityModalOpen(true); }}>
+                    <div style={{ "--x": 87, "--y": 58 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'Curitiba', image: '/Curitiba.webp', description: 'Nossa unidade em Curitiba representa a expansão no sul do país, trazendo nossa tradição francesa para a capital paranaense.' }); setIsCityModalOpen(true); }}>
                       <div className="map-city__label">
                         <span data-icon="🌲" className="map-city__sign">Curitiba</span>
-                        <Image src="/Curitiba.png" alt="Curitiba" width={120} height={80} className="map-city__image" />
+                        <Image src="/Curitiba.webp" alt="Curitiba" width={120} height={80} className="map-city__image" />
                       </div>
                     </div>
-                    <div style={{ "--x": 94, "--y": 38 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'Florianópolis', image: '/Florianópolis.png', description: 'A unidade de Florianópolis combina tradição francesa com o charme da ilha, servindo toda a região catarinense.' }); setIsCityModalOpen(true); }}>
+                    <div style={{ "--x": 94, "--y": 38 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'Florianópolis', image: '/Florianópolis.webp', description: 'A unidade de Florianópolis combina tradição francesa com o charme da ilha, servindo toda a região catarinense.' }); setIsCityModalOpen(true); }}>
                       <div className="map-city__label">
                         <span data-icon="🌊" className="map-city__sign anim anim-slidein">Florianópolis</span>
-                        <Image src="/Florian%C3%B3polis.png" alt="Florianópolis" width={120} height={80} className="map-city__image" />
+                        <Image src="/Florian%C3%B3polis.webp" alt="Florianópolis" width={120} height={80} className="map-city__image" />
                       </div>
                     </div>
-                    <div style={{ "--x": 45, "--y": 60 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'Xique-Xique', image: '/Xique Xeque.png', description: 'Localizada no interior da Bahia, nossa unidade de Xique-Xique leva a tradição francesa para o sertão nordestino com muito orgulho.' }); setIsCityModalOpen(true); }}>
+                    <div style={{ "--x": 45, "--y": 60 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'Xique-Xique', image: '/Xique Xeque.webp', description: 'Localizada no interior da Bahia, nossa unidade de Xique-Xique leva a tradição francesa para o sertão nordestino com muito orgulho.' }); setIsCityModalOpen(true); }}>
                       <div className="map-city__label">
                         <span data-icon="🌵" className="map-city__sign anim anim-grow">Xique-Xique</span>
-                        <Image src="/Xique%20Xeque.png" alt="Xique-Xique" width={120} height={80} className="map-city__image" />
+                        <Image src="/Xique%20Xeque.webp" alt="Xique-Xique" width={120} height={80} className="map-city__image" />
                       </div>
                     </div>
-                    <div style={{ "--x": 25, "--y": 45 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'Matão', image: '/Matao.png', description: 'Muito mato e aldeias. Nossa unidade em Matão está situada no interior paulista, rodeada pela natureza exuberante e comunidades rurais tradicionais.' }); setIsCityModalOpen(true); }}>
+                    <div style={{ "--x": 25, "--y": 45 } as React.CSSProperties} className="map-city group cursor-pointer" onClick={() => { setSelectedCity({ name: 'Matão', image: '/Matao.webp', description: 'Muito mato e aldeias. Nossa unidade em Matão está situada no interior paulista, rodeada pela natureza exuberante e comunidades rurais tradicionais.' }); setIsCityModalOpen(true); }}>
                       <div className="map-city__label">
                         <span data-icon="🌳" className="map-city__sign anim anim-slidein">Matão</span>
-                        <Image src="/Matao.png" alt="Matão" width={120} height={80} className="map-city__image" />
+                        <Image src="/Matao.webp" alt="Matão" width={120} height={80} className="map-city__image" />
                       </div>
                     </div>
                   </div>
@@ -212,8 +212,8 @@ export default function FranchiseCtaSection() {
         <div className={`relative bg-gradient-to-br from-brown-dark to-[#2a1411] rounded-3xl p-8 max-w-2xl w-full shadow-2xl border border-white/10 transition-all duration-500 transform ${isTeamModalOpen ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-8 opacity-0'}`}>
           {/* Modal Header */}
           <div className="text-center mb-8">
-            <div className="w-24 h-24 mx-auto mb-6 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 cursor-pointer hover:scale-105 transition-transform duration-300" onClick={() => { setSelectedImage("/Equipe.jpeg"); setIsImageModalOpen(true); }}>
-              <Image src="/Equipe.jpeg" alt="Equipe" width={96} height={96} className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"  />
+            <div className="w-24 h-24 mx-auto mb-6 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 cursor-pointer hover:scale-105 transition-transform duration-300" onClick={() => { setSelectedImage("/Equipe.webp"); setIsImageModalOpen(true); }}>
+              <Image src="/Equipe.webp" alt="Equipe" width={96} height={96} className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"  />
             </div>
             <h2 className="font-serif text-4xl font-bold text-white mb-3">Nossa Equipe Comercial</h2>
             <p className="text-white/70 text-lg">Especialistas em transformar seu sonho em realidade</p>

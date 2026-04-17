@@ -30,11 +30,11 @@ export default function VagasPage() {
   }, []);
 
   const banners = [
-    { src: "/images/Banneer/Assistente%20Administrativo.png", slug: "assistente-administrativo" },
-    { src: "/images/Banneer/Entregador.png", slug: "entregador" },
-    { src: "/images/Banneer/Embalador.png", slug: "embalador" },
-    { src: "/images/Banneer/Jovem%20Aprendiz.png", slug: "jovem-aprendiz" },
-    { src: "/images/Banneer/Auxiliar%20de%20Cozinha.png", slug: "auxiliar-de-cozinha" }
+    { src: "/images/Banneer/Assistente%20Administrativo.webp", slug: "assistente-administrativo" },
+    { src: "/images/Banneer/Entregador.webp", slug: "entregador" },
+    { src: "/images/Banneer/Embalador.webp", slug: "embalador" },
+    { src: "/images/Banneer/Jovem%20Aprendiz.webp", slug: "jovem-aprendiz" },
+    { src: "/images/Banneer/Auxiliar%20de%20Cozinha.webp", slug: "auxiliar-de-cozinha" }
   ];
 
   const nextSlide = () => setCurrentSlide(p => (p + 1) % banners.length);
@@ -214,7 +214,7 @@ export default function VagasPage() {
           {/* Photo side */}
           <div className="md:w-[45%] relative min-h-[400px] md:min-h-full overflow-hidden shrink-0">
             <Image
-              src="/Sao%20paulo.png"
+              src="/Sao%20paulo.webp"
               alt="São Paulo - Banco de Talentos"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-1000"

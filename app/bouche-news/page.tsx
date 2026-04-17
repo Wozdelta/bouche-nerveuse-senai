@@ -86,7 +86,7 @@ const NEWS_DATA = [
     summary: 'Nosso Diretor de Inclusão Diversidade realizou o sonho de conhecer pessoalmente o fundador da Bouche Nerveuse. Momento emocionante marcado por muita alegria e inspiração para toda a equipe.',
     date: '05 Mar 2026',
     readTime: '2 min',
-    image: '/kaiky conquista.png',
+    image: '/kaiky conquista.webp',
     featured: false,
   },
   {
@@ -155,6 +155,7 @@ export default function BoucheNewsPage() {
                 src={featuredNews.image} 
                 alt={featuredNews.title} 
                 fill 
+                priority
                 className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>

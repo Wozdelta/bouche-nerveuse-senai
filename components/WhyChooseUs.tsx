@@ -16,12 +16,17 @@ export default function WhyChooseUs() {
 
     const tick = () => {
       if (sobreContainerRef.current && sobreVideoRef.current) {
-        currentProgress += (targetProgress - currentProgress) * 0.08;
+        // Reduzido fator de aceleração de 0.08 para 0.06 para deixar mais orgânico
+        currentProgress += (targetProgress - currentProgress) * 0.06;
         
         const video = sobreVideoRef.current;
-        if (video.duration && !isNaN(video.duration)) {
-          if (Math.abs(targetProgress - currentProgress) > 0.0005) {
-            video.currentTime = currentProgress * video.duration;
+        // Só tenta mover se já tiver os dados carregados (readyState >= 2)
+        if (video.duration && video.readyState >= 2) {
+          const targetTime = currentProgress * video.duration;
+          // Threshold frame-limiter: Evita sobrecarregar o decoder de celular
+          // Atualiza apenas se a diferença for maior que 1/30 th de quadro (0.04s)
+          if (Math.abs(video.currentTime - targetTime) > 0.04) {
+             video.currentTime = targetTime;
           }
         }
       }

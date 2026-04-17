@@ -14,7 +14,7 @@ export default function CourseList() {
       categoria: 'Libras',
       duracao: '4h 30m',
       instrutor: 'Kaiky Silva Leão',
-      imagem: '/Libras Básico para Atendimento.png',
+      imagem: '/Libras Básico para Atendimento.webp',
       modulos: 12
     },
     {
@@ -23,7 +23,7 @@ export default function CourseList() {
       categoria: 'Diversidade',
       duracao: '2h 15m',
       instrutor: 'Kaiky Silva Leão',
-      imagem: '/Comunicação Inclusiva no Trabalho.png',
+      imagem: '/Comunicação Inclusiva no Trabalho.webp',
       modulos: 6
     },
     {
@@ -32,7 +32,7 @@ export default function CourseList() {
       categoria: 'Liderança',
       duracao: '3h 45m',
       instrutor: 'Kaiky Silva Leão',
-      imagem: '/Liderança e Equidade de Gênero.png',
+      imagem: '/Liderança e Equidade de Gênero.webp',
       modulos: 8
     },
     {
@@ -41,7 +41,7 @@ export default function CourseList() {
       categoria: 'Diversidade',
       duracao: '1h 50m',
       instrutor: 'Kaiky Silva Leão',
-      imagem: '/Combate ao Capacitismo.png',
+      imagem: '/Combate ao Capacitismo.webp',
       modulos: 5
     },
     {
@@ -50,7 +50,7 @@ export default function CourseList() {
       categoria: 'Libras',
       duracao: '5h 20m',
       instrutor: 'Kaiky Silva Leão',
-      imagem: '/Libras Intermediário Contexto Gastronômico.png',
+      imagem: '/Libras Intermediário Contexto Gastronômico.webp',
       modulos: 15
     },
     {
@@ -59,7 +59,7 @@ export default function CourseList() {
       categoria: 'Liderança',
       duracao: '2h 30m',
       instrutor: 'Kaiky Silva Leão',
-      imagem: '/Vieses Inconscientes na Contratação.png',
+      imagem: '/Vieses Inconscientes na Contratação.webp',
       modulos: 7
     }
   ];

@@ -59,7 +59,7 @@ export default function HistoriaPage() {
               </div>
               <div className="md:w-1/2 relative min-h-[400px] md:min-h-full">
                 <Image 
-                  src="/Sao paulo.png" 
+                  src="/Sao paulo.webp" 
                   alt="São Paulo" 
                   fill 
                   className="object-cover"
