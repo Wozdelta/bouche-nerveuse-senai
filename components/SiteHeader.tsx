@@ -19,7 +19,7 @@ export default function SiteHeader() {
       {/* Floating Action Button */}
       <button 
         onClick={() => setIsMenuOpen(true)}
-        className="fixed bottom-8 right-8 z-[90] w-16 h-16 bg-[#b71c1c] hover:bg-[#d32f2f] text-white rounded-full shadow-[0_4px_20px_rgba(183,28,28,0.4)] hover:shadow-[0_6px_25px_rgba(183,28,28,0.6)] flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95"
+        className={`fixed bottom-8 right-8 z-[90] w-16 h-16 bg-[#b71c1c] text-white rounded-full shadow-[0_4px_20px_rgba(183,28,28,0.4)] flex items-center justify-center transition-all duration-300 ${isMenuOpen ? 'opacity-0 scale-50 pointer-events-none' : 'opacity-100 scale-100 hover:bg-[#d32f2f] hover:-translate-y-1 hover:shadow-[0_6px_25px_rgba(183,28,28,0.6)] active:scale-95'}`}
         aria-label="Open Menu"
       >
         <div className="flex flex-col gap-[5px] items-center justify-center w-6">

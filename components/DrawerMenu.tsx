@@ -55,7 +55,7 @@ export default function DrawerMenu({ isOpen, onClose }: DrawerMenuProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]"
+            className="fixed inset-0 bg-black/80 z-[60]"
             onClick={onClose}
           />
 
@@ -84,7 +84,7 @@ export default function DrawerMenu({ isOpen, onClose }: DrawerMenuProps) {
                 <button
                   onClick={onClose}
                   aria-label="Fechar menu"
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 backdrop-blur-md flex items-center justify-center text-white/80 hover:text-white hover:bg-white/10 hover:scale-95 transition-all active:scale-90"
+                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/10 hover:scale-95 transition-all active:scale-90"
                 >
                   <X size={20} />
                 </button>
@@ -113,7 +113,7 @@ export default function DrawerMenu({ isOpen, onClose }: DrawerMenuProps) {
               </div>
 
               {/* Rodapé / CTA */}
-              <div className="p-6 bg-black/20 border-t border-white/5 backdrop-blur-sm">
+              <div className="p-6 bg-[#110a08] border-t border-white/5">
                 <a
                   href="/franquia"
                   onClick={onClose}

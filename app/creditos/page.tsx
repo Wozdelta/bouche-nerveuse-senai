@@ -2,16 +2,18 @@
 
 import Image from 'next/image';
 import { Instagram, MessageCircle, ArrowRight, Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 export default function CreditosPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
   const [isVagaAlertOpen, setIsVagaAlertOpen] = useState(false);
+  const [isLutoModalOpen, setIsLutoModalOpen] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const team = [
     { name: "Jonathan Rios", role: "Diretor Comercial", initials: "JR", badge: "Research", image: "/Jonathan.png" },
     { name: "Gustavo Santana", role: "Diretor do Clima Organizacional", initials: "GS", badge: "TPM", image: "/gustavo.png" },
-    { name: "João Abiel", role: "Diretor de Marketing", initials: "JA", badge: "Data", image: "/Abiel.png" },
+    { name: "João Abiel", role: "Diretor de Marketing", initials: "JA", badge: "Data", image: "/Abiel.png", isLuto: true },
     { name: "Kaiky Leão", role: "Diretor de Inclusão Diversidade", initials: "KL", badge: "Data", image: "/kaiky.png" },
     { name: "José Milton", role: "Diretor de Tecnologia", initials: "JM", badge: "Eng", image: "/Jose.png" },
   ];
@@ -36,29 +38,64 @@ export default function CreditosPage() {
             {team.map((member, idx) => (
               <div 
                 key={idx} 
-                className={`bg-white rounded-[2rem] p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col items-center text-center group hover:-translate-y-2 relative overflow-hidden md:col-span-2 lg:col-span-2 ${
+                onClick={member.isLuto ? () => {
+                  setIsLutoModalOpen(true);
+                  if (audioRef.current) {
+                    audioRef.current.currentTime = 0;
+                    audioRef.current.play();
+                  }
+                } : undefined}
+                className={`rounded-[2rem] p-8 shadow-lg transition-all duration-500 border flex flex-col items-center text-center group hover:-translate-y-2 relative overflow-hidden md:col-span-2 lg:col-span-2 ${
+                  member.isLuto ? 'bg-gradient-to-b from-[#111111] to-[#050505] border-white/5 hover:shadow-[0_15px_40px_rgba(30,0,0,0.6)] cursor-pointer' : 'bg-white hover:shadow-2xl border-gray-100'
+                } ${
                   idx === 3 ? 'lg:col-start-2' : ''
                 } ${
                   idx === 4 ? 'md:col-start-2 lg:col-start-4' : ''
                 }`}
               >
-                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-wine-light to-wine opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className={`absolute top-0 left-0 w-full h-2 transition-opacity duration-500 ${
+                  member.isLuto ? 'bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 opacity-60' : 'bg-gradient-to-r from-wine-light to-wine opacity-0 group-hover:opacity-100'
+                }`}></div>
                 
-                <div className="w-24 h-24 rounded-full overflow-hidden shrink-0 shadow-xl mb-6 group-hover:scale-110 transition-transform duration-500 border-4 border-white">
+                {member.isLuto && (
+                  <div className="absolute top-6 right-[-35px] font-serif font-bold text-[10px] uppercase tracking-widest text-[#a0a0a0] rotate-45 border-y border-white/10 bg-black/80 py-1.5 w-32 shadow-2xl z-20 flex justify-center">
+                    LUTO
+                  </div>
+                )}
+                <div className={`w-24 h-24 rounded-full overflow-hidden shrink-0 shadow-xl mb-6 group-hover:scale-110 transition-transform duration-500 border-4 ${
+                  member.isLuto ? 'border-gray-800/80 grayscale contrast-125' : 'border-white'
+                }`}>
                   <Image 
                     src={member.image} 
                     alt={member.name} 
                     width={96} 
                     height={96} 
-                    className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+                    className={`object-cover w-full h-full hover:scale-105 transition-transform duration-300 ${member.isLuto ? 'grayscale opacity-60 mix-blend-luminosity' : ''}`}
                      
                   />
                 </div>
                 
-                <div className="flex-1 flex flex-col justify-center">
-                  <h3 className="text-2xl font-serif font-bold text-brown-dark mb-2 group-hover:text-wine transition-colors duration-300">{member.name}</h3>
-                  <div className="w-8 h-0.5 bg-wine/20 mx-auto mb-3 group-hover:w-16 group-hover:bg-wine transition-all duration-500"></div>
-                  <p className="text-wine/80 font-bold text-xs uppercase tracking-[0.2em]">{member.role}</p>
+                <div className="flex-1 flex flex-col justify-center relative z-10 w-full">
+                  <h3 className={`text-2xl font-serif font-bold mb-2 transition-colors duration-300 ${
+                    member.isLuto ? 'text-gray-300 group-hover:text-white' : 'text-brown-dark group-hover:text-wine'
+                  }`}>{member.name}</h3>
+                  <div className={`w-8 h-0.5 mx-auto mb-3 group-hover:w-16 transition-all duration-500 ${
+                    member.isLuto ? 'bg-gray-600 group-hover:bg-red-900/50' : 'bg-wine/20 group-hover:bg-wine'
+                  }`}></div>
+                  <p className={`font-bold text-xs uppercase tracking-[0.2em] ${
+                    member.isLuto ? 'text-gray-500' : 'text-wine/80'
+                  }`}>{member.role}</p>
+
+                  {member.isLuto && (
+                    <div className="mt-8 -mx-8 -mb-8 py-3.5 bg-gradient-to-r from-[#000] via-[#111] to-[#000] border-t border-white/5 relative overflow-hidden flex justify-center items-center group-hover:via-[#1a1212] transition-colors duration-500">
+                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,0,0,0.05)_0%,_transparent_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                      <span className="relative z-10 font-sans font-bold text-[0.65rem] uppercase tracking-[0.3em] text-[#555] group-hover:text-[#aaa] transition-colors duration-500 flex items-center gap-3">
+                        <span className="w-1.5 h-1.5 rounded-full bg-gray-800 group-hover:bg-red-900/40 transition-colors duration-500"></span>
+                        Saiu da Embraer
+                        <span className="w-1.5 h-1.5 rounded-full bg-gray-800 group-hover:bg-red-900/40 transition-colors duration-500"></span>
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -147,6 +184,69 @@ export default function CreditosPage() {
             >
               Entendi
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* Luto Alert Modal Estilizado */}
+      {isLutoModalOpen && (
+        <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 sm:p-8 bg-[#030303]/95 backdrop-blur-3xl transition-opacity duration-700">
+          <div className="relative w-full max-w-xl group animate-in fade-in zoom-in duration-700 ease-out">
+            {/* Ambient Background Glow */}
+            <div className="absolute inset-0 bg-gradient-to-b from-red-900/20 via-transparent to-transparent blur-[100px] pointer-events-none"></div>
+
+            {/* Main Modal Container */}
+            <div className="relative bg-[#0a0a0a] rounded-[2.5rem] shadow-[0_0_80px_rgba(40,0,0,0.5)] border border-white/5 overflow-hidden flex flex-col items-center">
+              
+              {/* Close Button */}
+              <button 
+                onClick={() => {
+                  setIsLutoModalOpen(false);
+                  if (audioRef.current) {
+                    audioRef.current.pause();
+                  }
+                }}
+                className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-xl shadow-lg flex items-center justify-center text-white/50 hover:text-white transition-all duration-300 z-30 hover:scale-105 active:scale-95 group/close"
+              >
+                <X size={20} className="group-hover/close:rotate-90 transition-transform duration-300" />
+              </button>
+
+              {/* Top Banner inside Modal */}
+              <div className="w-full pt-10 pb-6 flex flex-col items-center relative z-10 bg-gradient-to-b from-black via-[#0a0a0a] to-transparent">
+                <span className="font-serif italic text-white/40 text-sm mb-2 tracking-widest">Em Memória</span>
+                <div className="h-[2px] w-16 bg-gradient-to-r from-transparent via-red-900/50 to-transparent mb-3"></div>
+                <h3 className="font-serif text-4xl font-bold text-white/90 drop-shadow-2xl">João Abiel</h3>
+              </div>
+
+              {/* The Image inside a museum frame */}
+              <div className="relative w-full px-6 pb-4">
+                <div className="relative rounded-[1.5rem] overflow-hidden border border-white/5 bg-black shadow-[0_20px_50px_rgba(0,0,0,0.8)] flex justify-center">
+                  <div className="absolute inset-0 border border-white/10 rounded-[1.5rem] z-10 pointer-events-none mix-blend-overlay"></div>
+                  
+                  <img 
+                    src="/images/AbielLuto/Modern Aesthetic Wedding Photo Collage Instagram Post.png" 
+                    alt="Homenagem Abiel" 
+                    className="w-full h-auto max-h-[60vh] object-contain opacity-90 sepia-[0.1] contrast-[1.05]"
+                  />
+                </div>
+              </div>
+
+              {/* Footer Quote */}
+              <div className="w-full pb-10 pt-2 flex flex-col items-center px-8 text-center relative z-10">
+                <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#666] mb-4">
+                  Eterno Diretor de Marketing
+                </p>
+                <p className="font-serif italic text-white/30 text-sm sm:text-base leading-relaxed max-w-[320px]">
+                  &quot;Não vai fazer falta&quot;
+                </p>
+              </div>
+
+              <audio 
+                ref={audioRef}
+                src="/images/AbielLuto/- Vai na paz irmao fica com Deus 😢 - Cr divulga (youtube).mp3"
+                loop
+              />
+            </div>
           </div>
         </div>
       )}
