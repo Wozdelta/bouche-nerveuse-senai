@@ -255,8 +255,8 @@ export default function Page() {
 
                 {/* Pilar 3 */}
                 <div className="flex gap-5 items-start group">
-                  <div className="w-14 h-14 rounded-2xl bg-[#b5122e] shadow-md flex items-center justify-center shrink-0 hover:scale-105 transition-transform duration-500">
-                    <Heart className="text-white" size={26} />
+                  <div className="w-14 h-14 rounded-2xl bg-white shadow-md flex items-center justify-center shrink-0 group-hover:bg-wine transition-colors duration-500">
+                    <Heart className="text-wine group-hover:text-white transition-colors duration-500" size={26} />
                   </div>
                   <div>
                     <h3 className="font-serif text-2xl font-bold text-brown-dark mb-2">Bouche Solidaire</h3>

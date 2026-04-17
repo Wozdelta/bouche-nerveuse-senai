@@ -19,7 +19,7 @@ export default function SiteHeader() {
   return (
     <>
       {/* Floating Action Button */}
-      <button 
+      <button
         onClick={() => setIsMenuOpen(true)}
         className={`fixed bottom-8 right-8 z-[90] w-16 h-16 bg-[#b71c1c] text-white rounded-full shadow-[0_4px_20px_rgba(183,28,28,0.4)] flex items-center justify-center transition-all duration-300 ${isMenuOpen ? 'opacity-0 scale-50 pointer-events-none' : 'opacity-100 scale-100 hover:bg-[#d32f2f] hover:-translate-y-1 hover:shadow-[0_6px_25px_rgba(183,28,28,0.6)] active:scale-95'}`}
         aria-label="Open Menu"
@@ -32,9 +32,9 @@ export default function SiteHeader() {
       </button>
 
       {/* Side Menu Drawer */}
-      <DrawerMenu 
-        isOpen={isMenuOpen} 
-        onClose={() => setIsMenuOpen(false)} 
+      <DrawerMenu
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
       />
 
       {/* Navbar */}
@@ -45,7 +45,7 @@ export default function SiteHeader() {
             <span className="font-serif text-2xl tracking-wider">Bouche</span>
             <span className="font-script text-4xl text-wine-light -mt-3 ml-4">Nerveuse</span>
           </a>
-          
+
           {/* Links */}
           <div className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
             <a href="/" className={`hover:text-white transition-colors pb-1 uppercase ${isActive('/') ? 'text-white border-b-2 border-wine-light' : 'text-white/80'}`}>Home</a>
@@ -65,12 +65,12 @@ export default function SiteHeader() {
           </div>
         </div>
       </nav>
-      
+
       {/* Vaga Alert Modal (Global fallback via header if needed, but keeping it isolated saves on re-renders) */}
       {isVagaAlertOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300">
           <div className="relative bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl animate-in fade-in zoom-in duration-300 text-center border border-gray-100">
-            <button 
+            <button
               onClick={() => setIsVagaAlertOpen(false)}
               className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-500 transition-colors"
             >
@@ -81,7 +81,7 @@ export default function SiteHeader() {
             </div>
             <h3 className="font-serif text-3xl font-bold text-brown-dark mb-2">Em breve</h3>
             <p className="text-gray-500 mb-6">Nossa página de vagas estará disponível em breve. Fique ligado!</p>
-            <button 
+            <button
               onClick={() => setIsVagaAlertOpen(false)}
               className="w-full bg-wine hover:bg-wine-light text-white font-bold py-3 px-6 rounded-xl transition-colors shadow-md"
             >

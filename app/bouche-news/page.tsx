@@ -123,6 +123,7 @@ export default function BoucheNewsPage() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [selectedNews, setSelectedNews] = useState<any>(null);
 
   const filteredNews = useMemo(() => {
     return NEWS_DATA.filter(news => {
@@ -149,7 +150,13 @@ export default function BoucheNewsPage() {
           </div>
 
           {/* Featured News Card */}
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl group cursor-pointer bg-black">
+          <div 
+            className="relative rounded-2xl overflow-hidden shadow-2xl group cursor-pointer bg-black"
+            onClick={() => {
+              if (featuredNews.videoUrl) setSelectedVideo(featuredNews.videoUrl);
+              else setSelectedNews(featuredNews);
+            }}
+          >
             <div className="aspect-[21/9] md:aspect-[21/8] relative w-full">
               <Image 
                 src={featuredNews.image} 
@@ -217,7 +224,10 @@ export default function BoucheNewsPage() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.2 }}
                   className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 group flex flex-col cursor-pointer"
-                  onClick={() => news.videoUrl && setSelectedVideo(news.videoUrl)}
+                  onClick={() => {
+                    if (news.videoUrl) setSelectedVideo(news.videoUrl);
+                    else setSelectedNews(news);
+                  }}
                 >
                   <div className="relative h-56 w-full overflow-hidden bg-black">
                     {news.videoUrl ? (
@@ -234,7 +244,7 @@ export default function BoucheNewsPage() {
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     )}
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-gray-900 text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full">
+                    <div className="absolute top-4 left-4 bg-white text-gray-900 text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full">
                       {news.category}
                     </div>
                     {news.videoUrl && (
@@ -496,6 +506,71 @@ export default function BoucheNewsPage() {
                 ✕
               </button>
             </div>
+          </motion.div>
+        )}
+
+        {/* News Modal */}
+        {selectedNews && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#1c0e0c]/80 backdrop-blur-xl p-4 md:p-8"
+            onClick={() => setSelectedNews(null)}
+          >
+            <motion.div 
+              initial={{ scale: 0.95, opacity: 0, y: 30 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 30 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-5xl w-full max-h-[90vh] bg-white rounded-[2rem] shadow-2xl flex flex-col md:flex-row overflow-hidden" 
+              onClick={e => e.stopPropagation()}
+            >
+              {/* Image Section (Left) */}
+              <div className="relative w-full h-[350px] md:h-auto md:w-[45%] shrink-0">
+                <Image src={selectedNews.image} alt={selectedNews.title} fill className="object-cover" />
+              </div>
+              
+              {/* Content Section (Right) */}
+              <div className="w-full md:w-[55%] p-8 md:p-12 overflow-y-auto flex flex-col relative bg-white">
+                <button 
+                  onClick={() => setSelectedNews(null)}
+                  className="absolute top-6 right-6 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-900 transition-colors z-30"
+                >
+                   <span className="sr-only">Fechar</span>
+                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+
+                 <div className="mt-2 mb-6">
+                   <span className="inline-block border border-wine/20 bg-wine/5 text-wine text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-full">
+                     {selectedNews.category}
+                   </span>
+                 </div>
+                 
+                 <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6 leading-tight">
+                    {selectedNews.title}
+                 </h2>
+                 
+                 <div className="flex flex-wrap items-center gap-6 text-gray-500 text-sm font-medium mb-8 pb-8 border-b border-gray-100">
+                    <span className="flex items-center gap-2"><Calendar size={16} /> {selectedNews.date}</span>
+                    <span className="flex items-center gap-2"><Clock size={16} /> {selectedNews.readTime}</span>
+                 </div>
+                 
+                 <div className="prose prose-lg text-gray-600 leading-relaxed font-light mb-8">
+                    <p>{selectedNews.summary}</p>
+                 </div>
+
+                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 shadow-sm mt-auto">
+                   <h3 className="font-serif text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                     <Target className="text-wine" size={20} /> O Propósito Bouche
+                   </h3>
+                   <p className="text-gray-500 text-sm leading-relaxed">
+                     Acreditamos que nosso sucesso é medido não apenas pela excelência de nossos produtos, mas pelo impacto positivo que causamos na vida de nossos colaboradores e comunidade.
+                   </p>
+                 </div>
+                 
+               </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
