@@ -149,7 +149,7 @@ export default function LoginPage() {
             alt="Bouche Nerveuse Desserts" 
             fill 
             className="object-cover object-center opacity-80"
-            unoptimized
+            
             priority
           />
           {/* Subtle overlay gradient */}

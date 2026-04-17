@@ -1,128 +1,10 @@
-"use client";
-
 import Image from 'next/image';
-import { Instagram, MessageCircle, ArrowRight, Menu, X, Heart, Users, ShieldCheck, AlertTriangle, BookOpen, CheckCircle2, Phone, Briefcase, Video, Ear, GraduationCap, Languages, PlayCircle, Clock, Filter } from 'lucide-react';
-import { useState } from 'react';
-import DrawerMenu from '../../components/DrawerMenu';
-import LoginButton from '../../components/LoginButton';
+import { Heart, Users, ShieldCheck, AlertTriangle, BookOpen, CheckCircle2, Languages, GraduationCap } from 'lucide-react';
+import CourseList from '../../components/CourseList';
 
 export default function InclusaoDiversidadePage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVagaAlertOpen, setIsVagaAlertOpen] = useState(false);
-  const [cursoFiltro, setCursoFiltro] = useState('Todos');
-
-  const cursos = [
-    {
-      id: 1,
-      titulo: 'Libras Básico para Atendimento',
-      categoria: 'Libras',
-      duracao: '4h 30m',
-      instrutor: 'Kaiky Silva Leão',
-      imagem: '/Libras Básico para Atendimento.png',
-      modulos: 12
-    },
-    {
-      id: 2,
-      titulo: 'Comunicação Inclusiva no Trabalho',
-      categoria: 'Diversidade',
-      duracao: '2h 15m',
-      instrutor: 'Kaiky Silva Leão',
-      imagem: '/Comunicação Inclusiva no Trabalho.png',
-      modulos: 6
-    },
-    {
-      id: 3,
-      titulo: 'Liderança e Equidade de Gênero',
-      categoria: 'Liderança',
-      duracao: '3h 45m',
-      instrutor: 'Kaiky Silva Leão',
-      imagem: '/Liderança e Equidade de Gênero.png',
-      modulos: 8
-    },
-    {
-      id: 4,
-      titulo: 'Combate ao Capacitismo',
-      categoria: 'Diversidade',
-      duracao: '1h 50m',
-      instrutor: 'Kaiky Silva Leão',
-      imagem: '/Combate ao Capacitismo.png',
-      modulos: 5
-    },
-    {
-      id: 5,
-      titulo: 'Libras Intermediário: Contexto Gastronômico',
-      categoria: 'Libras',
-      duracao: '5h 20m',
-      instrutor: 'Kaiky Silva Leão',
-      imagem: '/Libras Intermediário Contexto Gastronômico.png',
-      modulos: 15
-    },
-    {
-      id: 6,
-      titulo: 'Vieses Inconscientes na Contratação',
-      categoria: 'Liderança',
-      duracao: '2h 30m',
-      instrutor: 'Kaiky Silva Leão',
-      imagem: '/Vieses Inconscientes na Contratação.png',
-      modulos: 7
-    }
-  ];
-
-  const categorias = ['Todos', 'Libras', 'Diversidade', 'Liderança'];
-
-  const cursosFiltrados = cursoFiltro === 'Todos' 
-    ? cursos 
-    : cursos.filter(curso => curso.categoria === cursoFiltro);
-
   return (
-    <div className="min-h-screen bg-[#fdfbfb] font-sans text-brown-dark overflow-x-hidden">
-      {/* Floating Action Button */}
-      <button 
-        onClick={() => setIsMenuOpen(true)}
-        className="fixed bottom-8 right-8 z-50 w-16 h-16 bg-[#b71c1c] hover:bg-[#d32f2f] text-white rounded-full shadow-[0_4px_20px_rgba(183,28,28,0.4)] hover:shadow-[0_6px_25px_rgba(183,28,28,0.6)] flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95"
-        aria-label="Open Menu"
-      >
-        <div className="flex flex-col gap-[5px] items-center justify-center w-6">
-          <span className="w-full h-[3px] bg-white rounded-full"></span>
-          <span className="w-full h-[3px] bg-white rounded-full"></span>
-          <span className="w-full h-[3px] bg-white rounded-full"></span>
-        </div>
-      </button>
-
-      {/* Side Menu Drawer */}
-      <DrawerMenu 
-        isOpen={isMenuOpen} 
-        onClose={() => setIsMenuOpen(false)} />
-
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-brown-dark/90 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-          {/* Logo */}
-          <a href="/" className="flex flex-col leading-none text-white cursor-pointer">
-            <span className="font-serif text-2xl tracking-wider">Bouche</span>
-            <span className="font-script text-4xl text-wine-light -mt-3 ml-4">Nerveuse</span>
-          </a>
-          
-          {/* Links */}
-          <div className="hidden lg:flex items-center gap-8 text-sm text-white/90 font-medium tracking-wide uppercase">
-            <a href="/" className="hover:text-white transition-colors pb-1 text-white/80">Home</a>
-            <a href="/historia" className="hover:text-white transition-colors pb-1 text-white/80">Cultura</a>
-            <a href="/clima-organizacional" className="hover:text-white transition-colors pb-1 text-white/80">Clima</a>
-            <a href="/inclusao-e-diversidade" className="hover:text-white transition-colors pb-1 text-white border-b-2 border-wine-light">Inclusão</a>
-            <a href="/vagas" className="hover:text-white transition-colors pb-1 text-white/80 uppercase tracking-wide">Vagas</a>
-            <a href="/bouche-news" className="hover:text-white transition-colors pb-1 text-white/80">Bouche News</a>
-          </div>
-
-          {/* Actions */}
-          <div className="flex items-center gap-4 sm:gap-6">
-            <LoginButton />
-            <a href="/ouvidoria" className="hidden sm:flex bg-[#b71c1c] hover:bg-[#d32f2f] text-white px-6 py-2.5 rounded-full font-bold transition-all items-center gap-2 shadow-[0_0_15px_rgba(183,28,28,0.3)] hover:shadow-[0_0_20px_rgba(183,28,28,0.5)]">
-              Ouvidoria Digital <Phone size={18} />
-            </a>
-          </div>
-        </div>
-      </nav>
-
+    <div className="font-sans text-brown-dark overflow-x-hidden pt-20">
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -131,8 +13,9 @@ export default function InclusaoDiversidadePage() {
             alt="Diversidade na equipe" 
             fill 
             className="object-cover"
-            priority
+            priority /* LCP image */
             referrerPolicy="no-referrer"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
@@ -309,137 +192,11 @@ export default function InclusaoDiversidadePage() {
             </div>
           </section>
 
-          {/* Plataforma de Cursos */}
-          <section className="mt-24 mb-12">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-              <div>
-                <h2 className="text-4xl font-serif font-bold text-brown-dark mb-4">Plataforma de Cursos</h2>
-                <p className="text-gray-600 max-w-2xl text-lg">
-                  Explore nossos treinamentos online disponíveis para todos os colaboradores.
-                </p>
-              </div>
-              
-              {/* Filtros */}
-              <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
-                <Filter size={20} className="text-gray-400 mr-2 shrink-0" />
-                {categorias.map(categoria => (
-                  <button
-                    key={categoria}
-                    onClick={() => setCursoFiltro(categoria)}
-                    className={`px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
-                      cursoFiltro === categoria 
-                        ? 'bg-wine text-white shadow-md' 
-                        : 'bg-white text-gray-600 border border-gray-200 hover:border-wine/50 hover:text-wine'
-                    }`}
-                  >
-                    {categoria}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Grid de Cursos */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {cursosFiltrados.map(curso => (
-                <div key={curso.id} className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  {/* Thumbnail */}
-                  <div className="relative h-48 w-full overflow-hidden">
-                    <Image 
-                      src={curso.imagem} 
-                      alt={curso.titulo}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      unoptimized
-                    />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                      <PlayCircle size={48} className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-75 group-hover:scale-100" />
-                    </div>
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-wine uppercase tracking-wider">
-                      {curso.categoria}
-                    </div>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-serif font-bold text-brown-dark mb-2 line-clamp-2">
-                      {curso.titulo}
-                    </h3>
-                    <p className="text-gray-500 text-sm mb-6">
-                      Com {curso.instrutor}
-                    </p>
-                    
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                      <div className="flex items-center gap-4 text-sm text-gray-600">
-                        <div className="flex items-center gap-1.5">
-                          <Clock size={16} className="text-wine/70" />
-                          <span>{curso.duracao}</span>
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                          <BookOpen size={16} className="text-wine/70" />
-                          <span>{curso.modulos} mód.</span>
-                        </div>
-                      </div>
-                      <button className="text-wine hover:text-wine-light font-medium text-sm flex items-center gap-1 transition-colors">
-                        Acessar <ArrowRight size={16} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            {cursosFiltrados.length === 0 && (
-              <div className="text-center py-12 bg-gray-50 rounded-3xl border border-gray-100">
-                <p className="text-gray-500 text-lg">Nenhum curso encontrado para esta categoria.</p>
-              </div>
-            )}
-          </section>
+          {/* Plataforma de Cursos Extraída */}
+          <CourseList />
 
         </div>
       </main>
-      
-      {/* Footer */}
-      <footer className="bg-[#1b0f0d] text-white/60 py-12 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col leading-none text-white opacity-50">
-            <span className="font-serif text-xl tracking-wider">Bouche</span>
-            <span className="font-script text-2xl text-wine-light -mt-2 ml-4">Nerveuse</span>
-          </div>
-          <p className="text-sm">© 2026 Bouche Nerveuse. Todos os direitos reservados.</p>
-          <div className="flex gap-6">
-            <a href="/creditos" className="hover:text-white transition-colors">Créditos</a>
-            <a href="#" className="hover:text-white transition-colors">Termos</a>
-            <a href="#" className="hover:text-white transition-colors">Privacidade</a>
-          </div>
-        </div>
-      </footer>
-
-      {/* Vagas Alert Modal */}
-      {isVagaAlertOpen && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl p-8 max-w-md w-full text-center relative shadow-2xl animate-in fade-in zoom-in duration-300">
-            <button 
-              onClick={() => setIsVagaAlertOpen(false)}
-              className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-500 transition-colors"
-            >
-              <X size={18} />
-            </button>
-            <div className="w-16 h-16 bg-wine/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Briefcase className="text-wine" size={32} />
-            </div>
-            <h3 className="text-2xl font-serif font-bold text-brown-dark mb-4">Nenhuma vaga no momento</h3>
-            <p className="text-gray-600 mb-8">
-              Atualmente não temos vagas abertas, mas estamos sempre em busca de talentos. Acompanhe nossas redes sociais para futuras oportunidades!
-            </p>
-            <button 
-              onClick={() => setIsVagaAlertOpen(false)}
-              className="w-full bg-wine hover:bg-wine-light text-white py-3 rounded-xl font-medium transition-colors"
-            >
-              Entendi
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

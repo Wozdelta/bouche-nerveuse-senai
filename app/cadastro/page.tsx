@@ -47,7 +47,7 @@ export default function CadastroPage() {
             alt="Bouche Nerveuse Patisserie - São Paulo" 
             fill 
             className="object-cover object-center opacity-80"
-            unoptimized
+            
             priority
           />
           {/* Subtle overlay gradient */}

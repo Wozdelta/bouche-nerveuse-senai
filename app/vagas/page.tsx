@@ -9,15 +9,12 @@ import {
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import DrawerMenu from '../../components/DrawerMenu';
-import LoginButton from '../../components/LoginButton';
 import ApplyModal from '../../components/ApplyModal';
 
 const selectArrow = `url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23555%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")`;
 
 export default function VagasPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
+    const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [filtroArea, setFiltroArea] = useState('Todas as áreas');
   const [filtroCidade, setFiltroCidade] = useState('Todas as cidades');
@@ -70,47 +67,9 @@ export default function VagasPage() {
   return (
     <div className="min-h-screen bg-[#faf9f8] font-sans text-[#2d211e] overflow-x-hidden selection:bg-[#b71c1c] selection:text-white">
 
-      {/* FAB - Menu */}
-      <motion.button
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1 }}
-        onClick={() => setIsMenuOpen(true)}
-        className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-[#b71c1c] hover:bg-[#c62828] text-white rounded-full shadow-[0_8px_30px_rgba(183,28,28,0.4)] flex items-center justify-center transition-transform hover:scale-110 active:scale-95"
-        aria-label="Abrir Menu"
-      >
-        <div className="flex flex-col gap-[5px] w-5">
-          <span className="w-full h-[2.5px] bg-white rounded-full" />
-          <span className="w-full h-[2.5px] bg-white rounded-full" />
-          <span className="w-full h-[2.5px] bg-white rounded-full" />
-        </div>
-      </motion.button>
 
-      <DrawerMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
 
-      {/* Navbar with smooth transition */}
-      <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled ? 'bg-[#1b0f0d]/95 backdrop-blur-md border-b border-white/10 shadow-lg' : 'bg-gradient-to-b from-[#1b0f0d]/90 to-transparent pt-2'}`}>
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="flex flex-col leading-none text-white group">
-            <span className="font-serif text-2xl tracking-wider group-hover:text-white/90 transition-colors">Bouche</span>
-            <span className="font-script text-4xl text-[#ef9a9a] -mt-3 ml-4 drop-shadow-sm group-hover:text-[#ffbaba] transition-colors">Nerveuse</span>
-          </Link>
-          <div className="hidden lg:flex items-center gap-8 text-xs text-white/80 font-semibold tracking-widest uppercase">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <Link href="/historia" className="hover:text-white transition-colors">Cultura</Link>
-            <Link href="/clima-organizacional" className="hover:text-white transition-colors">Clima</Link>
-            <Link href="/inclusao-e-diversidade" className="hover:text-white transition-colors">Inclusão</Link>
-            <span className="text-white border-b-2 border-[#ef9a9a] pb-0.5 relative after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[2px] after:bg-[#ef9a9a] after:shadow-[0_0_8px_rgba(239,154,154,0.6)]">Vagas</span>
-            <Link href="/bouche-news" className="hover:text-white transition-colors">Bouche News</Link>
-          </div>
-          <div className="flex items-center gap-4 lg:gap-6">
-            <LoginButton />
-            <Link href="/ouvidoria" className="hidden sm:flex bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all items-center gap-2">
-              Ouvidoria <Phone size={16} />
-            </Link>
-          </div>
-        </div>
-      </nav>
+
 
       {/* ── HERO CAROUSEL MODERN ── */}
       <div 
@@ -317,21 +276,7 @@ export default function VagasPage() {
 
       <ApplyModal isOpen={isApplyModalOpen} onClose={() => setIsApplyModalOpen(false)} />
 
-      {/* Footer Restyled gently */}
-      <footer className="bg-[#110a09] text-white/50 py-12 border-t border-white/10 mt-auto">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-sm">
-          <div className="flex flex-col leading-none opacity-60 hover:opacity-100 transition-opacity">
-            <span className="font-serif text-xl tracking-wider text-white">Bouche</span>
-            <span className="font-script text-3xl text-[#ef9a9a] -mt-2 ml-4">Nerveuse</span>
-          </div>
-          <p className="font-medium tracking-wide">© {new Date().getFullYear()} Bouche Nerveuse. Criando emoções.</p>
-          <div className="flex gap-6 font-semibold uppercase tracking-wider text-xs">
-            <Link href="/creditos" className="hover:text-white transition-colors">Créditos</Link>
-            <Link href="#" className="hover:text-white transition-colors">Termos</Link>
-            <Link href="#" className="hover:text-white transition-colors">Privacidade</Link>
-          </div>
-        </div>
-      </footer>
+
     </div>
   );
 }

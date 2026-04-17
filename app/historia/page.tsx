@@ -1,64 +1,9 @@
-"use client";
-
 import Image from 'next/image';
-import { Instagram, MessageCircle, ArrowRight, Menu, X, Target, Award, Users, Leaf, Heart, ShieldCheck, BarChart, Star, MessageSquare, Briefcase, TrendingUp, CheckCircle2, Headphones, Phone } from 'lucide-react';
-import { useState } from 'react';
-import DrawerMenu from '../../components/DrawerMenu';
-import LoginButton from '../../components/LoginButton';
+import { Target, Award, Users, Leaf, Heart, ShieldCheck, Star, CheckCircle2 } from 'lucide-react';
 
 export default function HistoriaPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVagaAlertOpen, setIsVagaAlertOpen] = useState(false);
-
   return (
-    <div className="min-h-screen bg-[#fdfbfb] font-sans text-brown-dark overflow-x-hidden">
-      {/* Floating Action Button */}
-      <button 
-        onClick={() => setIsMenuOpen(true)}
-        className="fixed bottom-8 right-8 z-50 w-16 h-16 bg-[#b71c1c] hover:bg-[#d32f2f] text-white rounded-full shadow-[0_4px_20px_rgba(183,28,28,0.4)] hover:shadow-[0_6px_25px_rgba(183,28,28,0.6)] flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95"
-        aria-label="Open Menu"
-      >
-        <div className="flex flex-col gap-[5px] items-center justify-center w-6">
-          <span className="w-full h-[3px] bg-white rounded-full"></span>
-          <span className="w-full h-[3px] bg-white rounded-full"></span>
-          <span className="w-full h-[3px] bg-white rounded-full"></span>
-        </div>
-      </button>
-
-      {/* Side Menu Drawer */}
-      <DrawerMenu 
-        isOpen={isMenuOpen} 
-        onClose={() => setIsMenuOpen(false)} />
-
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-brown-dark/90 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-          {/* Logo */}
-          <a href="/" className="flex flex-col leading-none text-white cursor-pointer">
-            <span className="font-serif text-2xl tracking-wider">Bouche</span>
-            <span className="font-script text-4xl text-wine-light -mt-3 ml-4">Nerveuse</span>
-          </a>
-          
-          {/* Links */}
-          <div className="hidden lg:flex items-center gap-8 text-sm text-white/90 font-medium tracking-wide uppercase">
-            <a href="/" className="hover:text-white transition-colors pb-1 text-white/80">Home</a>
-            <a href="/historia" className="hover:text-white transition-colors pb-1 text-white border-b-2 border-wine-light">Cultura</a>
-            <a href="/clima-organizacional" className="hover:text-white transition-colors pb-1 text-white/80">Clima</a>
-            <a href="/inclusao-e-diversidade" className="hover:text-white transition-colors pb-1 text-white/80">Inclusão</a>
-            <a href="/vagas" className="hover:text-white transition-colors pb-1 text-white/80 uppercase tracking-wide">Vagas</a>
-            <a href="/bouche-news" className="hover:text-white transition-colors pb-1 text-white/80">Bouche News</a>
-          </div>
-
-          {/* Actions */}
-          <div className="flex items-center gap-4 sm:gap-6">
-            <LoginButton />
-            <a href="/ouvidoria" className="hidden sm:flex bg-[#b71c1c] hover:bg-[#d32f2f] text-white px-6 py-2.5 rounded-full font-bold transition-all items-center gap-2 shadow-[0_0_15px_rgba(183,28,28,0.3)] hover:shadow-[0_0_20px_rgba(183,28,28,0.5)]">
-              Ouvidoria Digital <Phone size={18} />
-            </a>
-          </div>
-        </div>
-      </nav>
-
+    <div className="font-sans text-brown-dark overflow-x-hidden pt-20">
       {/* Hero Section with France Image */}
       <section className="relative h-[60vh] min-h-[500px] w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -67,8 +12,9 @@ export default function HistoriaPage() {
             alt="Paris, França" 
             fill 
             className="object-cover"
-            priority
+            priority /* Critical for LCP */
             referrerPolicy="no-referrer"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
@@ -117,7 +63,8 @@ export default function HistoriaPage() {
                   alt="São Paulo" 
                   fill 
                   className="object-cover"
-                  unoptimized
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy" /* Optimize image below fold */
                 />
               </div>
             </div>
@@ -164,7 +111,7 @@ export default function HistoriaPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { icon: Users, title: "Pessoas em primeiro lugar", desc: "Valorizamos colaboradores, clientes e parceiros, promovendo respeito, bem-estar e desenvolvimento." },
-                { icon: Award, title: "Excelência na qualidade em nossos doces", desc: "Garantimos alto padrão de qualidade, utilizando bons ingredientes e seguindo normas de higiene e segurança." },
+                { icon: Award, title: "Excelência na qualidade a nossos doces", desc: "Garantimos alto padrão de qualidade, utilizando bons ingredientes e seguindo normas de higiene e segurança." },
                 { icon: Target, title: "Compromisso com os consumidores", desc: "Buscamos atender e superar as expectativas, oferecendo produtos de qualidade e bom atendimento." },
                 { icon: Leaf, title: "Sustentabilidade e Responsabilidade Social", desc: "Adotamos práticas conscientes, reduzindo desperdícios e contribuindo com a comunidade." },
                 { icon: Heart, title: "Paixão pelo que fazemos", desc: "Trabalhamos com dedicação e amor pela confeitaria, colocando cuidado em cada produto." },
@@ -244,41 +191,6 @@ export default function HistoriaPage() {
 
         </div>
       </main>
-      
-      {/* Footer */}
-      <footer className="bg-[#1b0f0d] text-white/60 py-12 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col leading-none text-white opacity-50">
-            <span className="font-serif text-xl tracking-wider">Bouche</span>
-            <span className="font-script text-2xl text-wine-light -mt-2 ml-4">Nerveuse</span>
-          </div>
-          <p className="text-sm">© 2026 Bouche Nerveuse. Todos os direitos reservados.</p>
-          <div className="flex gap-6">
-            <a href="/creditos" className="hover:text-white transition-colors">Créditos</a>
-            <a href="#" className="hover:text-white transition-colors">Termos</a>
-            <a href="#" className="hover:text-white transition-colors">Privacidade</a>
-          </div>
-        </div>
-      </footer>
-
-      {/* Vaga Alert Modal */}
-      {isVagaAlertOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300">
-          <div className="relative bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl animate-in fade-in zoom-in duration-300 text-center border border-gray-100">
-            <div className="w-16 h-16 bg-wine-light/10 text-wine rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            </div>
-            <h3 className="font-serif text-3xl font-bold text-brown-dark mb-2">Em breve</h3>
-            <p className="text-gray-500 mb-6">Nossa página de vagas estará disponível em breve. Fique ligado!</p>
-            <button 
-              onClick={() => setIsVagaAlertOpen(false)}
-              className="w-full bg-wine hover:bg-wine-light text-white font-bold py-3 px-6 rounded-xl transition-colors shadow-md"
-            >
-              Entendi
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

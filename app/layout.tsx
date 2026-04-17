@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Poppins, Great_Vibes } from 'next/font/google';
 import './globals.css';
+import SiteHeader from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -31,8 +33,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${playfair.variable} ${poppins.variable} ${greatVibes.variable}`}>
-      <body className="font-sans antialiased" suppressHydrationWarning>
+      <body className="font-sans antialiased min-h-screen flex flex-col bg-[#fdfbfb]" suppressHydrationWarning>
+        <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

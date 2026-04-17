@@ -3,12 +3,9 @@
 import Image from 'next/image';
 import { Instagram, MessageCircle, ArrowRight, Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import DrawerMenu from '../../components/DrawerMenu';
-import LoginButton from '../../components/LoginButton';
 
 export default function CreditosPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
   const [isVagaAlertOpen, setIsVagaAlertOpen] = useState(false);
 
   const team = [
@@ -21,58 +18,7 @@ export default function CreditosPage() {
 
   return (
     <div className="min-h-screen bg-[#f5f5f5] font-sans text-brown-dark overflow-x-hidden flex flex-col">
-      {/* Floating Action Button */}
-      <button 
-        onClick={() => setIsMenuOpen(true)}
-        className="fixed bottom-8 right-8 z-50 w-16 h-16 bg-[#b71c1c] hover:bg-[#d32f2f] text-white rounded-full shadow-[0_4px_20px_rgba(183,28,28,0.4)] hover:shadow-[0_6px_25px_rgba(183,28,28,0.6)] flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95"
-        aria-label="Open Menu"
-      >
-        <div className="flex flex-col gap-[5px] items-center justify-center w-6">
-          <span className="w-full h-[3px] bg-white rounded-full"></span>
-          <span className="w-full h-[3px] bg-white rounded-full"></span>
-          <span className="w-full h-[3px] bg-white rounded-full"></span>
-        </div>
-      </button>
-
       {/* Side Menu Drawer */}
-      <DrawerMenu 
-        isOpen={isMenuOpen} 
-        onClose={() => setIsMenuOpen(false)} />
-
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-brown-dark/90 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-          {/* Logo */}
-          <a href="/" className="flex flex-col leading-none text-white cursor-pointer">
-            <span className="font-serif text-2xl tracking-wider">Bouche</span>
-            <span className="font-script text-4xl text-wine-light -mt-3 ml-4">Nerveuse</span>
-          </a>
-          
-          {/* Links */}
-          <div className="hidden lg:flex items-center gap-8 text-sm text-white/90 font-medium tracking-wide uppercase">
-            <a href="/" className="hover:text-wine-light transition-colors">Home</a>
-            <a href="/historia" className="hover:text-wine-light transition-colors">História</a>
-            <a href="/#produtos" className="hover:text-wine-light transition-colors">Produtos</a>
-            <a href="/#sobre" className="hover:text-wine-light transition-colors">Sobre</a>
-            <a href="/#franquias" className="hover:text-wine-light transition-colors">Franquias</a>
-            <a href="/#unidades" className="hover:text-wine-light transition-colors">Unidades</a>
-            <a href="/#contato" className="hover:text-wine-light transition-colors">Contato</a>
-          </div>
-
-          {/* Actions */}
-          <div className="flex items-center gap-4 sm:gap-6">
-            <LoginButton />
-            <div className="hidden md:flex items-center gap-4 text-white/80">
-              <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><MessageCircle size={22} /></a>
-              <a href="/instagram" className="hover:text-white transition-colors"><Instagram size={22} /></a>
-            </div>
-            <a href="/#franquias" className="hidden sm:flex bg-[#b71c1c] hover:bg-[#d32f2f] text-white px-6 py-2.5 rounded-full font-bold transition-all items-center gap-2 shadow-[0_0_15px_rgba(183,28,28,0.3)] hover:shadow-[0_0_20px_rgba(183,28,28,0.5)]">
-              Franquias <ArrowRight size={18} />
-            </a>
-          </div>
-        </div>
-      </nav>
-
       {/* Main Content */}
       <main className="flex-1 pt-40 pb-24 px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
@@ -105,7 +51,7 @@ export default function CreditosPage() {
                     width={96} 
                     height={96} 
                     className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                    unoptimized 
+                     
                   />
                 </div>
                 
@@ -147,22 +93,6 @@ export default function CreditosPage() {
         </div>
       </main>
       
-      {/* Footer */}
-      <footer className="bg-[#1b0f0d] text-white/60 py-12 border-t border-white/10 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col leading-none text-white opacity-50">
-            <span className="font-serif text-xl tracking-wider">Bouche</span>
-            <span className="font-script text-2xl text-wine-light -mt-2 ml-4">Nerveuse</span>
-          </div>
-          <p className="text-sm">© 2026 Bouche Nerveuse. Todos os direitos reservados.</p>
-          <div className="flex gap-6">
-            <a href="/creditos" className="hover:text-white transition-colors">Créditos</a>
-            <a href="#" className="hover:text-white transition-colors">Termos</a>
-            <a href="#" className="hover:text-white transition-colors">Privacidade</a>
-          </div>
-        </div>
-      </footer>
-
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-all duration-300">

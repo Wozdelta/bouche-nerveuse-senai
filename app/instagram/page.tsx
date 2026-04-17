@@ -1,5 +1,3 @@
-"use client";
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { Home, Search, Compass, PlaySquare, MessageCircle, Heart, PlusSquare, Menu, Settings, Bookmark, Grid, UserSquare, Plus, Instagram, Link as LinkIcon } from 'lucide-react';

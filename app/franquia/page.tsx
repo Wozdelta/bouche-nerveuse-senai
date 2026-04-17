@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
@@ -143,7 +143,7 @@ export default function FranquiaPage() {
           alt="Background"
           fill
           className="object-cover opacity-10"
-          unoptimized
+          
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a0f0e]/80 via-[#1a0f0e]/95 to-[#1a0f0e]"></div>
       </div>

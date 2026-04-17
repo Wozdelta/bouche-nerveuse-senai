@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useState, useMemo } from 'react';
 import { Search, ChevronDown, ArrowRight, PlayCircle, Trophy, Target, Award, TrendingUp, Calendar, Clock, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import LoginButton from '../../components/LoginButton';
 
 const CATEGORIES = ['Todas', 'Notícias', 'Conquistas', 'Metas', 'Patrocínios', 'Vídeos'];
 
@@ -89,6 +88,17 @@ const NEWS_DATA = [
     readTime: '2 min',
     image: '/kaiky conquista.png',
     featured: false,
+  },
+  {
+    id: 9,
+    category: 'Vídeos',
+    title: 'Bouche Solidaire',
+    summary: 'Campanha bouche solidaire realiza a entrega de ovos de páscoa para crianças carentes do orfanato Esperança',
+    date: '10 Abr 2026',
+    readTime: '1 min',
+    image: '/Bouche Solidaire.mp4',
+    featured: false,
+    videoUrl: '/Bouche Solidaire.mp4',
   }
 ];
 
@@ -127,65 +137,7 @@ export default function BoucheNewsPage() {
 
   return (
     <div className="min-h-screen bg-[#faf9f8] font-sans text-gray-900">
-      {/* Header Específico Bouche News */}
-      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between gap-4">
-          {/* Logo */}
-          <a href="/" className="flex flex-col leading-none text-brown-dark cursor-pointer flex-shrink-0">
-            <span className="font-serif text-xl tracking-wider">Bouche</span>
-            <span className="font-script text-2xl text-wine -mt-2 ml-3">News</span>
-          </a>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
-            <a href="/" className="hover:text-wine transition-colors">Home</a>
-            <a href="/#produtos" className="hover:text-wine transition-colors">Produtos</a>
-            <a href="/franquia" className="hover:text-wine transition-colors">Franquia</a>
-            <a href="/bouche-news" className="text-wine border-b-2 border-wine pb-1">Bouche News</a>
-          </nav>
-
-          {/* Search & Actions */}
-          <div className="flex items-center gap-4 flex-1 justify-end">
-            <LoginButton />
-            <div className="relative hidden sm:block max-w-xs w-full">
-              <input 
-                type="text" 
-                placeholder="Buscar notícias..." 
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-wine/20 focus:border-wine transition-all"
-              />
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
-            </div>
-
-            <div className="relative">
-              <button 
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center gap-2 bg-wine text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-wine-dark transition-colors shadow-sm"
-              >
-                Acesso Rápido <ChevronDown size={16} className={`transition-transform ${isDropdownOpen ? "rotate-180" : ""}`} />
-              </button>
-              
-              <AnimatePresence>
-                {isDropdownOpen && (
-                  <motion.div 
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50"
-                  >
-                    <a href="#ultimas" onClick={() => setIsDropdownOpen(false)} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-wine transition-colors">Últimas Notícias</a>
-                    <a href="#conquistas" onClick={() => setIsDropdownOpen(false)} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-wine transition-colors">Conquistas & Metas</a>
-                    <a href="#patrocinios" onClick={() => setIsDropdownOpen(false)} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-wine transition-colors">Patrocínios</a>
-                    <a href="#videos" onClick={() => setIsDropdownOpen(false)} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-wine transition-colors">Vídeos</a>
-                    <a href="#galeria" onClick={() => setIsDropdownOpen(false)} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-wine transition-colors">Galeria</a>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </div>
-        </div>
-      </header>
 
       {/* 1) HERO */}
       <section className="relative pt-20 pb-24 lg:pt-28 lg:pb-32 overflow-hidden bg-white">
@@ -570,13 +522,7 @@ export default function BoucheNewsPage() {
         </div>
       </section>
 
-      {/* Footer Simples */}
-      <footer className="bg-[#1a1614] py-8 text-center text-white/40 text-sm flex flex-col items-center gap-2">
-        <div className="max-w-7xl mx-auto px-4">
-          &copy; {new Date().getFullYear()} Bouche Nerveuse. Todos os direitos reservados.
-        </div>
-        <a href="/creditos" className="hover:text-white transition-colors">Créditos</a>
-      </footer>
+
     </div>
   );
 }
