@@ -14,6 +14,8 @@ export default function SiteHeader() {
   // Highlight navigation state helper
   const isActive = (path: string) => pathname === path;
 
+  if (pathname === '/instagram') return null;
+
   return (
     <>
       {/* Floating Action Button */}
