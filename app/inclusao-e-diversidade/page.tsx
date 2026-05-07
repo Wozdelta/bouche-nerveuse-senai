@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Heart, Users, ShieldCheck, AlertTriangle, BookOpen, CheckCircle2, Languages, GraduationCap } from 'lucide-react';
 import CourseList from '../../components/CourseList';
 
@@ -97,6 +98,12 @@ export default function InclusaoDiversidadePage() {
               <p className="text-gray-600 leading-relaxed flex-1">
                 Nosso Código de Ética e Conduta estabelece diretrizes claras sobre o comportamento esperado de todos os colaboradores, repudiando qualquer forma de discriminação, assédio ou desrespeito no ambiente de trabalho.
               </p>
+              <Link href="/codigo-de-etica" className="mt-6 px-4 py-2 text-sm bg-wine text-white rounded-lg font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 self-start flex items-center gap-2 group">
+                Saber mais
+                <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
 
             <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow flex flex-col">
