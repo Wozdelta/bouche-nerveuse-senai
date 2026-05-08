@@ -14,35 +14,20 @@ export default function LiveIndicators() {
   const [isQRModalOpen, setIsQRModalOpen] = useState(false);
 
   useEffect(() => {
-    let isMounted = true;
-    const fetchIndicadores = async () => {
-      try {
-        const res = await fetch('/api/clima-indicadores');
-        const data = await res.json();
-        if (isMounted) {
-          setIndicadores({
-            diversidade: data.diversidade || 0,
-            qualidadeTrabalho: data.qualidadeTrabalho || 0,
-            valorizacao: data.valorizacao || 0,
-            qualidadeProduto: data.qualidadeProduto || 0
-          });
-        }
-      } catch (error) {
-        console.error("Erro ao buscar indicadores", error);
-      }
-    };
+    // Gera porcentagens aleatórias boas (entre 85 e 98)
+    const randomGood = () => Math.floor(Math.random() * (98 - 85 + 1)) + 85;
     
-    // Busca inicial
-    fetchIndicadores();
-    
-    // Atualiza automaticamente a cada 5 segundos
-    const interval = setInterval(fetchIndicadores, 5000);
-    
-    // Limpa o intervalo quando o componente desmontar
-    return () => {
-      isMounted = false;
-      clearInterval(interval);
-    }
+    // Pequeno atraso para a animação disparar após a montagem
+    const timer = setTimeout(() => {
+      setIndicadores({
+        diversidade: randomGood(),
+        qualidadeTrabalho: randomGood(),
+        valorizacao: randomGood(),
+        qualidadeProduto: randomGood()
+      });
+    }, 500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
