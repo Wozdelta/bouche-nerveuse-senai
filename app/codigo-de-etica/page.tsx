@@ -32,186 +32,263 @@ export default function CodigoEticaPage() {
 
   const sections = [
     {
-      title: "1. Introdução",
+      title: "Introdução",
       content: (
         <>
-          <p>O presente Código de Ética estabelece os princípios, valores e diretrizes que orientam as atividades e relações da nossa empresa de bolos e tortas. Nosso objetivo é garantir que todas as nossas ações sejam conduzidas com integridade, respeito, responsabilidade e compromisso com a qualidade.</p>
-          <p>Este código orienta a conduta no relacionamento com clientes, colaboradores, fornecedores e parceiros, promovendo uma cultura baseada na confiança, na transparência e no profissionalismo.</p>
+          <p>Este Código de Ética e Conduta estabelece os princípios, valores e diretrizes que orientam o comportamento e as decisões de todos os colaboradores da Bouche Nerveuse.</p>
+          <p>Seu objetivo é garantir que todas as atividades da empresa sejam realizadas com ética, respeito, responsabilidade e transparência, fortalecendo a confiança entre colaboradores, clientes, parceiros e a sociedade.</p>
+          <p>Todos os colaboradores devem conhecer, respeitar e aplicar este código em suas atividades diárias, contribuindo para um ambiente de trabalho saudável, inclusivo e produtivo.</p>
         </>
       )
     },
     {
-      title: "2. Princípios e Valores",
+      title: "1. Identidade da Empresa",
       content: (
         <>
-          <p>Nossa atuação é guiada pelos seguintes valores fundamentais:</p>
-          <ul className="list-disc pl-8 space-y-1">
-            <li><strong>Qualidade:</strong> Produzir bolos e tortas com excelência, sabor e cuidado.</li>
-            <li><strong>Respeito:</strong> Tratar clientes, colaboradores e parceiros com dignidade e consideração.</li>
-            <li><strong>Transparência:</strong> Comunicar informações claras e verdadeiras.</li>
-            <li><strong>Responsabilidade:</strong> Cumprir compromissos assumidos.</li>
-            <li><strong>Segurança alimentar:</strong> Garantir produtos seguros para consumo.</li>
-            <li><strong>Ética:</strong> Agir sempre com honestidade e integridade.</li>
+          <h3 className="font-bold mb-2">1.1 Origem do Nome</h3>
+          <p>O nome Bouche Nerveuse tem origem na língua francesa e pode ser interpretado como &quot;boca nervosa&quot; ou &quot;boca inquieta&quot;, uma expressão associada ao desejo constante de experimentar sabores marcantes e irresistíveis.</p>
+          <p>Os fundadores escolheram esse nome para representar a ideia de que os doces da marca despertam sensações intensas e inesquecíveis, estimulando o paladar e criando uma experiência única para quem prova seus produtos.</p>
+          <p>Assim, o nome simboliza prazer, desejo e emoção, reforçando a identidade da empresa no universo da confeitaria gourmet.</p>
+          <blockquote className="border-l-4 border-black pl-4 my-4 italic">
+            &quot;A boca inquieta pelo sabor perfeito.&quot;
+          </blockquote>
+        </>
+      )
+    },
+    {
+      title: "2. Missão, Visão e Valores",
+      content: (
+        <>
+          <h3 className="font-bold mb-1 mt-4">Missão</h3>
+          <p>Produzir doces e produtos de confeitaria com qualidade, criatividade e excelência, proporcionando experiências únicas e memoráveis aos consumidores.</p>
+
+          <h3 className="font-bold mb-1 mt-4">Visão</h3>
+          <p>Ser reconhecida como uma referência em confeitaria gourmet, inspirando paixão tanto em quem produz quanto em quem consome nossos produtos.</p>
+
+          <h3 className="font-bold mb-2 mt-4">Valores Organizacionais</h3>
+          <ul className="list-disc pl-8 space-y-2">
+            <li><strong>Pessoas em primeiro lugar:</strong> Valorizamos colaboradores, clientes e parceiros, promovendo respeito, bem-estar e desenvolvimento contínuo.</li>
+            <li><strong>Excelência na qualidade:</strong> Garantimos alto padrão em nossos doces, utilizando ingredientes de qualidade e seguindo rigorosamente as normas de higiene e segurança alimentar.</li>
+            <li><strong>Compromisso com os consumidores:</strong> Buscamos atender e superar expectativas, oferecendo produtos de qualidade e atendimento acolhedor.</li>
+            <li><strong>Sustentabilidade e responsabilidade social:</strong> Adotamos práticas conscientes, reduzindo desperdícios e contribuindo com a comunidade.</li>
+            <li><strong>Paixão pelo que fazemos:</strong> Trabalhamos com dedicação e amor pela confeitaria, colocando cuidado em cada produto.</li>
+            <li><strong>Ética e transparência:</strong> Agimos com honestidade e responsabilidade em todas as relações da empresa.</li>
           </ul>
-          <p>Esses princípios orientam todas as decisões e práticas da empresa.</p>
         </>
       )
     },
     {
-      title: "3. Compromisso com a Qualidade dos Produtos",
+      title: "3. Estilo de Liderança",
       content: (
         <>
-          <p>Todos os produtos oferecidos em nosso site são preparados com atenção aos detalhes, utilizando ingredientes de qualidade e seguindo padrões adequados de produção. Buscamos garantir:</p>
-          <ul className="list-disc pl-8 space-y-1">
-            <li>seleção cuidadosa de ingredientes;</li>
-            <li>controle de qualidade durante a produção;</li>
-            <li>apresentação adequada dos produtos;</li>
-            <li>conservação correta até a entrega ao cliente.</li>
+          <p>A Bouche Nerveuse acredita em uma liderança inspiradora, participativa e próxima da equipe. Os líderes atuam como facilitadores do sucesso coletivo, incentivando o desenvolvimento profissional e o fortalecimento do trabalho em equipe.</p>
+          <p>Entre os princípios da liderança da empresa destacam-se:</p>
+          <ul className="list-disc pl-8 space-y-1 mt-2">
+            <li>Desenvolvimento contínuo da equipe</li>
+            <li>Cultura de feedback construtivo</li>
+            <li>Ambiente de confiança e colaboração</li>
+            <li>Valorização de cada colaborador</li>
           </ul>
-          <p>Nosso objetivo é proporcionar uma experiência positiva e satisfatória a cada cliente.</p>
         </>
       )
     },
     {
-      title: "4. Segurança e Higiene Alimentar",
+      title: "4. Comportamentos Esperados",
       content: (
         <>
-          <p>A segurança alimentar é prioridade em todas as etapas da produção. Seguimos boas práticas de manipulação de alimentos, mantendo ambientes limpos, organizados e adequados para a preparação dos produtos. Além disso:</p>
-          <ul className="list-disc pl-8 space-y-1">
-            <li>mantemos cuidados rigorosos com higiene pessoal durante a produção;</li>
-            <li>armazenamos ingredientes de forma adequada;</li>
-            <li>informamos quando os produtos podem conter alergênicos como leite, ovos, glúten ou castanhas.</li>
+          <p>A identidade da Bouche Nerveuse é refletida nas atitudes diárias de todos os colaboradores. Esperamos que cada integrante da equipe atue com:</p>
+          <ul className="list-disc pl-8 space-y-1 mt-2">
+            <li>Ética e transparência</li>
+            <li>Excelência e pontualidade</li>
+            <li>Higiene e segurança alimentar</li>
+            <li>Espírito de equipe</li>
+            <li>Paixão por servir</li>
+            <li>Respeito mútuo</li>
           </ul>
-          <p>Nosso compromisso é garantir alimentos seguros e confiáveis.</p>
+          <p className="mt-4">Estes comportamentos contribuem para um ambiente de trabalho positivo e para a qualidade dos produtos oferecidos aos clientes.</p>
         </>
       )
     },
     {
-      title: "5. Atendimento ao Cliente",
+      title: "5. Clima Organizacional",
       content: (
         <>
-          <p>O relacionamento com nossos clientes deve ser baseado no respeito, na cordialidade e na transparência. Comprometemo-nos a:</p>
-          <ul className="list-disc pl-8 space-y-1">
-            <li>oferecer atendimento educado e atencioso;</li>
-            <li>responder dúvidas e solicitações com clareza;</li>
-            <li>informar corretamente sobre preços, ingredientes, tamanhos e prazos;</li>
-            <li>buscar soluções justas em caso de problemas ou imprevistos.</li>
+          <p>A Bouche Nerveuse valoriza um ambiente de trabalho saudável e busca constantemente compreender o nível de satisfação de seus colaboradores.</p>
+          <h3 className="font-bold mb-2 mt-4">Como medimos o clima organizacional:</h3>
+          <ul className="list-disc pl-8 space-y-2">
+            <li><strong>Pesquisa anual (anônima):</strong> Avalia aspectos como satisfação, liderança, comunicação, reconhecimento e condições de trabalho.</li>
+            <li><strong>Pulse Surveys:</strong> Pesquisas rápidas realizadas trimestralmente para acompanhar indicadores específicos do ambiente organizacional.</li>
+            <li>
+              <strong>Indicadores internos:</strong> Monitoramento de:
+              <ul className="list-disc pl-6 mt-1 space-y-1">
+                <li>Rotatividade de colaboradores</li>
+                <li>Absenteísmo</li>
+                <li>Produtividade</li>
+                <li>Engajamento da equipe</li>
+              </ul>
+            </li>
           </ul>
-          <p>A satisfação do cliente é uma das nossas principais prioridades.</p>
         </>
       )
     },
     {
-      title: "6. Transparência nas Informações",
+      title: "6. Estratégias de Motivação",
       content: (
         <>
-          <p>Todas as informações disponibilizadas em nosso site devem ser claras, verdadeiras e atualizadas. Isso inclui:</p>
-          <ul className="list-disc pl-8 space-y-1">
-            <li>descrição dos produtos;</li>
-            <li>valores e condições de pagamento;</li>
-            <li>prazos de produção e entrega;</li>
-            <li>políticas de troca, cancelamento e reembolso.</li>
+          <p>A empresa acredita que colaboradores motivados proporcionam experiências memoráveis aos clientes. Entre as principais estratégias adotadas estão:</p>
+          <ul className="list-disc pl-8 space-y-1 mt-2">
+            <li>Programa de reconhecimento por desempenho</li>
+            <li>Premiações por inovação em processos</li>
+            <li>Plano de desenvolvimento profissional</li>
+            <li>Cultura de feedback construtivo</li>
+            <li>Celebração de metas alcançadas</li>
+            <li>Incentivo ao trabalho em equipe</li>
           </ul>
-          <p>Não utilizamos práticas enganosas ou informações que possam induzir o cliente ao erro.</p>
         </>
       )
     },
     {
-      title: "7. Compromisso com Prazos e Entregas",
+      title: "7. Melhoria do Ambiente de Trabalho",
       content: (
         <>
-          <p>Respeitamos os prazos acordados com nossos clientes e buscamos garantir que todos os pedidos sejam produzidos e entregues conforme combinado.</p>
-          <p>Caso ocorram situações imprevistas que possam afetar o prazo, o cliente será informado com antecedência e serão buscadas alternativas adequadas para solucionar a situação.</p>
-        </>
-      )
-    },
-    {
-      title: "8. Relação com Fornecedores e Parceiros",
-      content: (
-        <>
-          <p>A relação com fornecedores e parceiros deve ser baseada na ética, no respeito e na responsabilidade. Buscamos trabalhar com fornecedores que:</p>
-          <ul className="list-disc pl-8 space-y-1">
-            <li>ofereçam produtos de qualidade;</li>
-            <li>sigam boas práticas de produção;</li>
-            <li>atuem de forma responsável e ética.</li>
+          <p>A Bouche Nerveuse investe continuamente em melhorias que promovam segurança, conforto e integração entre os colaboradores. Entre as iniciativas adotadas estão:</p>
+          <ul className="list-disc pl-8 space-y-1 mt-2">
+            <li>Modernização constante de equipamentos</li>
+            <li>Ambientes limpos, seguros e ergonômicos</li>
+            <li>Espaços de convivência para integração</li>
+            <li>Política de respeito, diversidade e inclusão</li>
+            <li>Canal aberto para sugestões</li>
           </ul>
-          <p>Valorizamos relações comerciais justas e transparentes.</p>
         </>
       )
     },
     {
-      title: "9. Respeito e Ambiente de Trabalho",
+      title: "8. Comunicação Interna",
       content: (
         <>
-          <p>Promovemos um ambiente de trabalho saudável, respeitoso e colaborativo. Não são toleradas atitudes de:</p>
-          <ul className="list-disc pl-8 space-y-1">
-            <li>discriminação;</li>
-            <li>assédio moral ou sexual;</li>
-            <li>desrespeito ou comportamento abusivo.</li>
+          <p>A comunicação clara e transparente fortalece o alinhamento entre equipes e liderança. Os principais canais utilizados são:</p>
+          <ul className="list-disc pl-8 space-y-1 mt-2">
+            <li>Reuniões periódicas de alinhamento</li>
+            <li>Informativos internos digitais</li>
+            <li>Murais informativos na área de produção</li>
+            <li>Encontros entre lideranças e equipes</li>
+            <li>Canal interno para dúvidas</li>
           </ul>
-          <p>Valorizamos a diversidade, o respeito às diferenças e a cooperação entre todos.</p>
         </>
       )
     },
     {
-      title: "10. Sustentabilidade e Responsabilidade Social",
+      title: "9. Qualidade de Vida no Trabalho",
       content: (
         <>
-          <p>Sempre que possível, buscamos adotar práticas mais sustentáveis em nossas atividades, como:</p>
-          <ul className="list-disc pl-8 space-y-1">
-            <li>redução de desperdício de alimentos;</li>
-            <li>uso consciente de recursos;</li>
-            <li>escolha de embalagens adequadas;</li>
-            <li>apoio a práticas responsáveis de produção.</li>
+          <p>A Bouche Nerveuse acredita que o cuidado com as pessoas é essencial para a excelência dos produtos. Entre as práticas adotadas estão:</p>
+          <ul className="list-disc pl-8 space-y-1 mt-2">
+            <li>Jornada de trabalho equilibrada</li>
+            <li>Pausas adequadas durante o expediente</li>
+            <li>Incentivo à alimentação saudável</li>
+            <li>Programas de saúde e segurança</li>
+            <li>Ergonomia no ambiente de trabalho</li>
+            <li>Apoio psicológico aos colaboradores</li>
           </ul>
-          <p>Reconhecemos que pequenas ações podem contribuir para um impacto positivo no meio ambiente e na sociedade.</p>
         </>
       )
     },
     {
-      title: "11. Privacidade e Proteção de Dados",
+      title: "10. Inclusão e Diversidade",
       content: (
         <>
-          <p>Respeitamos a privacidade dos nossos clientes e protegemos as informações pessoais coletadas através do site. Os dados fornecidos pelos clientes são utilizados apenas para:</p>
-          <ul className="list-disc pl-8 space-y-1">
-            <li>processamento de pedidos;</li>
-            <li>comunicação relacionada ao atendimento;</li>
-            <li>melhoria dos nossos serviços.</li>
+          <p>A Bouche Nerveuse acredita que as diferenças tornam a empresa mais forte, criativa e inovadora.</p>
+          <h3 className="font-bold mb-2 mt-4">Política de Inclusão</h3>
+          <p>A empresa garante igualdade de oportunidades, independentemente de gênero, raça, orientação sexual, idade, religião ou deficiência.</p>
+          <p className="mt-2">Nosso compromisso é manter um ambiente seguro, acolhedor e livre de preconceitos.</p>
+        </>
+      )
+    },
+    {
+      title: "11. Ações Voltadas à Diversidade",
+      content: (
+        <>
+          <ul className="list-disc pl-8 space-y-3">
+            <li><strong>Recrutamento inclusivo:</strong> Processos seletivos focados em habilidades e competências, evitando vieses inconscientes.</li>
+            <li><strong>Grupos de afinidade:</strong> Espaços seguros para troca de experiências e sugestões de melhorias.</li>
+            <li><strong>Acessibilidade:</strong> Adaptação de espaços físicos e ferramentas digitais para pessoas com deficiência.</li>
           </ul>
-          <p>Não compartilhamos informações pessoais sem autorização, exceto quando exigido por lei.</p>
         </>
       )
     },
     {
-      title: "12. Integridade e Conduta Ética",
+      title: "12. Código de Ética",
       content: (
         <>
-          <p>Esperamos que todas as atividades relacionadas à empresa sejam conduzidas com honestidade e integridade. Não são permitidas práticas como:</p>
-          <ul className="list-disc pl-8 space-y-1">
-            <li>fraude;</li>
-            <li>falsificação de informações;</li>
-            <li>concorrência desleal;</li>
-            <li>uso indevido da marca ou imagem da empresa.</li>
+          <p>O Código de Ética da Bouche Nerveuse estabelece diretrizes claras sobre o comportamento esperado de todos os colaboradores.</p>
+          <p className="mt-2">A empresa não tolera qualquer forma de:</p>
+          <ul className="list-disc pl-8 space-y-1 my-2">
+            <li>discriminação</li>
+            <li>assédio moral ou sexual</li>
+            <li>desrespeito</li>
+            <li>violência no ambiente de trabalho</li>
           </ul>
-          <p>Todas as decisões devem considerar princípios éticos e o respeito às leis.</p>
+          <p>Todos os colaboradores devem contribuir para manter um ambiente baseado em respeito, dignidade e cooperação.</p>
         </>
       )
     },
     {
-      title: "13. Melhoria Contínua",
+      title: "13. Canal de Denúncia",
       content: (
         <>
-          <p>Buscamos constantemente aprimorar nossos produtos, processos e atendimento.</p>
-          <p>Valorizamos feedbacks de clientes e parceiros como forma de melhorar nossos serviços e fortalecer nossa qualidade.</p>
+          <p>A Bouche Nerveuse disponibiliza um canal de denúncia anônimo, seguro e confidencial para relatar situações que violem os princípios da empresa.</p>
+          
+          <h3 className="font-bold mb-2 mt-4">Princípios do canal:</h3>
+          <ul className="list-disc pl-8 space-y-2">
+            <li><strong>Confidencialidade:</strong> Garantia de sigilo absoluto das informações.</li>
+            <li><strong>Não retaliação:</strong> Nenhum colaborador sofrerá punições por realizar denúncias de boa-fé.</li>
+            <li><strong>Investigação responsável:</strong> Todas as denúncias são analisadas com seriedade e imparcialidade.</li>
+          </ul>
+
+          <h3 className="font-bold mb-2 mt-4">Situações que podem ser relatadas:</h3>
+          <ul className="list-disc pl-8 space-y-1">
+            <li>Assédio moral ou sexual</li>
+            <li>Discriminação</li>
+            <li>Fraudes ou corrupção</li>
+            <li>Violação de normas de segurança</li>
+            <li>Sugestões de melhoria</li>
+          </ul>
         </>
       )
     },
     {
-      title: "14. Disposições Finais",
+      title: "14. Capacitação e Treinamentos",
       content: (
         <>
-          <p>Este Código de Ética orienta a forma como conduzimos nossas atividades e relações profissionais.</p>
-          <p>Nos comprometemos a manter esses princípios em todas as nossas ações, garantindo que nossa empresa seja reconhecida pela qualidade dos produtos, pelo respeito aos clientes e pela atuação responsável no mercado.</p>
+          <p>A Bouche Nerveuse investe no desenvolvimento contínuo da equipe por meio de treinamentos e programas de capacitação. Entre eles:</p>
+          
+          <ul className="list-disc pl-8 space-y-3 mt-4">
+            <li>
+              <strong>Treinamento em Libras:</strong> Capacitação básica e intermediária para atendimento acessível à comunidade surda.
+            </li>
+            <li>
+              <strong>Workshops de diversidade:</strong> Encontros voltados para temas como letramento racial, equidade de gênero, inclusão LGBTQIAPN+ e combate ao capacitismo.
+            </li>
+            <li>
+              <strong>Plataforma de cursos:</strong> Treinamentos online voltados para Libras, diversidade, liderança e comunicação inclusiva.
+            </li>
+          </ul>
+        </>
+      )
+    },
+    {
+      title: "15. Compromisso Final",
+      content: (
+        <>
+          <p>A reputação da Bouche Nerveuse é construída diariamente pelas atitudes de cada colaborador.</p>
+          <p className="mt-2">O cumprimento deste Código de Ética e Conduta garante:</p>
+          <ul className="list-disc pl-8 space-y-1 my-2">
+            <li>relações de trabalho saudáveis</li>
+            <li>respeito entre as pessoas</li>
+            <li>qualidade nos produtos</li>
+            <li>confiança dos clientes e parceiros</li>
+          </ul>
+          <p>Todos são responsáveis por praticar e fortalecer esses princípios em suas atividades diárias.</p>
         </>
       )
     }
@@ -220,11 +297,31 @@ export default function CodigoEticaPage() {
   return (
     <div className="bg-gray-100 min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        {/* Botão Voltar */}
-        <div className="mb-6">
+        {/* Ações do Topo */}
+        <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <Link href="/inclusao-e-diversidade" className="text-sm font-semibold text-gray-500 hover:text-gray-900 transition-colors flex items-center gap-2">
             &larr; Voltar
           </Link>
+          
+          <div className="flex flex-wrap items-center gap-3">
+            <a 
+              href="https://docs.google.com/document/d/16hAsh7AJu0wkSNLTJs7-gG19HkPDCKCebA2ADAFnxrE/edit?usp=drivesdk" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm font-semibold text-gray-600 hover:text-black border border-gray-300 hover:border-black px-4 py-2 rounded-md transition-all flex items-center gap-2 bg-white"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              Ver no Docs
+            </a>
+            <a 
+              href="https://docs.google.com/document/d/16hAsh7AJu0wkSNLTJs7-gG19HkPDCKCebA2ADAFnxrE/export?format=pdf" 
+              download="Codigo_de_Etica_Bouche_Nerveuse.pdf"
+              className="text-sm font-semibold text-white bg-black hover:bg-gray-800 px-4 py-2 rounded-md transition-all shadow-sm flex items-center gap-2"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+              Baixar PDF
+            </a>
+          </div>
         </div>
 
         {/* Documento Estilo Papel Timbrado */}
