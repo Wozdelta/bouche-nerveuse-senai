@@ -196,7 +196,7 @@ export default function SupplyChainJourney() {
           <div className={styles.loadingExperience}>
             <div className={styles.loadingTopbar}>
               <div>
-                <span className={styles.liveDot} /> Etapa interativa
+
                 <h3>{cargoLoaded ? 'Carga selada. Transporte liberado.' : 'Carregue o cacau para iniciar o transporte'}</h3>
               </div>
               <span className={cargoLoaded ? styles.statusReady : styles.statusWaiting}>

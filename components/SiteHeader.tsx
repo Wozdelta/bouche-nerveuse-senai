@@ -49,7 +49,7 @@ export default function SiteHeader() {
           {/* Links */}
           <div className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
             <a href="/" className={`hover:text-white transition-colors pb-1 uppercase ${isActive('/') ? 'text-white border-b-2 border-wine-light' : 'text-white/80'}`}>Home</a>
-            <a href="/cadeia-de-suprimentos" className={`hover:text-white transition-colors pb-1 uppercase ${isActive('/cadeia-de-suprimentos') ? 'text-white border-b-2 border-wine-light' : 'text-white/80'}`}>Suprimentos</a>
+            <a href="/cadeia-de-suprimentos" className={`hover:text-white transition-colors pb-1 uppercase ${isActive('/cadeia-de-suprimentos') ? 'text-white border-b-2 border-wine-light' : 'text-white/80'}`}>Cadeia de Suprimentos</a>
             <a href="/historia" className={`hover:text-white transition-colors pb-1 uppercase ${isActive('/historia') ? 'text-white border-b-2 border-wine-light' : 'text-white/80'}`}>Cultura</a>
             <a href="/clima-organizacional" className={`hover:text-white transition-colors pb-1 uppercase ${isActive('/clima-organizacional') ? 'text-white border-b-2 border-wine-light' : 'text-white/80'}`}>Clima</a>
             <a href="/inclusao-e-diversidade" className={`hover:text-white transition-colors pb-1 uppercase ${isActive('/inclusao-e-diversidade') ? 'text-white border-b-2 border-wine-light' : 'text-white/80'}`}>Inclusão</a>

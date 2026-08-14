@@ -202,7 +202,7 @@ export default function SupplyChainJourneyLegacy() {
 
           <div className={styles.transportCard}>
             <div className={styles.transportHeader}>
-              <div><small><i /> Etapa interativa</small><h3>{loaded ? 'Carga selada. Transporte iniciado.' : 'Carregue o cacau para iniciar o transporte'}</h3></div>
+              <div><h3>{loaded ? 'Carga selada. Transporte iniciado.' : 'Carregue o cacau para iniciar o transporte'}</h3></div>
               <span className={loaded ? styles.ready : ''}>{loaded ? <><CheckCircle2 size={14} /> Carga rastreada</> : <><PackageCheck size={14} /> Aguardando lote</>}</span>
             </div>
 
@@ -361,20 +361,9 @@ export default function SupplyChainJourneyLegacy() {
                         <i>−4°C</i>
                       </span>
                     </span>
-                    <span className={styles.dockLotAction}><b>Levar lote à doca 02</b><ArrowRight size={10} /></span>
                   </motion.button>
                 )}
               </AnimatePresence>
-              {phase === 'arrived' ? (
-                <div className={styles.dockStatus}>
-                  <Truck size={13} />
-                  <b>Caminhão na doca</b>
-                  <i />
-                  <span>Temperatura −4°C</span>
-                </div>
-              ) : (
-                <div className={styles.waitingTransport}><Truck size={16} /> Aguardando transporte</div>
-              )}
             </div>
             <div className={styles.orderBar}>
               <span><small>Ordem da padaria</small><b>BN · Red Velvet Silvestre</b></span>
